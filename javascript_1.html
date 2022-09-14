@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>First JavaScript Coding</title>
+
+        <style>
+            h1 {
+                text-align: center;
+            }
+            ol {
+                list-style: none;
+                counter-reset: item;
+            }
+            ol > li {
+                counter-increment: item;
+                margin-bottom: 5px;
+            }
+            ol > li:before {
+                margin-right: 10px;
+                content: counter(item);
+                background: crimson;
+                border-radius: 100%;
+                color: white;
+                width: 1.3em;
+                text-align: center;
+                display: inline-block;
+            }
+        </style>
+    </head>
+
+    <body>
+    	<h1>JavaScript Code 1</h1>
+        <p>Use <code>console.log()</code> to output the results of the below questions unless asked to alert them specifically. Feel free to comment out completed questions if the amount of <code>console.logs()</code> takes up too much space in the console window.</p>
+
+        <ol>
+            <li>Calculate the sum of the following numbers 15, 12, 32, 8, 19, 22, 20 and 7.</li>
+            <li>Calculate the average/mean of all the above numbers.</li>
+
+            <br>
+
+            <li>Convert 10 Canadian dollars to USD</li>
+            <li>Convert 50 KG to POUNDS.</li>
+            <li>Convert 100 POUNDS to KG.</li>
+            <li>Convert 2.5 Hours to Seconds.</li>
+            <li>Convert 3600 Seconds to Hours.</li>
+
+            <p>For the rest use a prompt to input the value that needs to be converted. Use <code>parseInt()</code> to insure the prompt is converted to a number for your calculations.</p>
+
+            <li>Convert Fahrenheit to degrees Celsius.</li>
+            <li>Convert degrees Celsius to Fahrenheit.</li>
+            <li>Calculate the year a person was born based on their age.</li>
+            <li>--> Extend the above to make it more accurate by checking if the user has had their birthday this year.</li>
+
+            <br>
+
+            <li>Create variables separately for your first and last name and then display them in an alert. Do not use prompts for this.</li>
+            <li>--> Extend the above to include a space between them.</li>
+            <li>Use three Prompts to ask the user for a type of fruit, the cost of the fruit and the currency to use. Then show an alert that displays "Apples cost in total $5" if that's what was inputted.</li>
+            <li>Use four prompts to ask the user what their hobbies are. When that is done display an alert that says "I like the following hobbies: hobby1, hobby2, hobby3 and hobby4.". Make sure to include the commas, the "and" and the period.</li>
+
+            <br>
+
+            <li>Create a system which checks how much annual salary a user makes and then alerts the user whether they are in the low, medium or high tax bracket. The brackets are as follows:
+                <ul>
+                    <li>Low Bracket - Less than 20,000,</li>
+                    <li>Medium Bracket - Between 35,000 and 20,000 inclusive</li>
+                    <li>High Bracket - Above 35,000</li>
+                </ul>
+            </li>
+             <li>Extend the above to calculate the tax to be deducted from the user's salary and display this info in another alert. The tax rates for each bracket are as follows and need only apply to the user's entire income e.g. high income earners should have 30% tax taken from their entire annual salary:
+                <ul>
+                    <li>Low Bracket - 10% tax</li>
+                    <li>Medium Bracket - 20% tax</li>
+                    <li>High Bracket - 30% tax</li>
+                </ul>
+             </li>
+              <li>Further extend the above so that only a single alert is displayed. It should read "You are in the Medium Tax Bracket. Total Tax = tax. Total Net = salary - tax".
+             </li>
+        </ol>
+        <script>
+            // Write your code here
+
+            // WAYS TO RECEIVE & OUTPUT TO A WEBPAGE
+            // =====================================
+
+            // This is a single line comment 
+            /* 
+               This is a multi
+               line comment 
+            */
+
+            // console.log() puts a string into the console window
+            console.log('Hello World !!!!');
+            
+            // alert() pops up a box with your text onto the page
+            // alert('ALERT');
+            
+            // prompt() asks the user for a string input
+            // prompt('What is your last name?');
+            // You can store this user input into a string variable
+            // const name = prompt("What is your name?");
+
+            // confirm() asks the user for a boolean (true or false) response
+            // confirm('Are you tall?');
+            // Like promtp() you can store this user input into a variable
+            // const isTall = confirm('Are you tall?');
+
+            
+            // VARIABLES
+            // =====================================
+
+            // DECLARING VARIABLES & ASSIGNING VALUES
+            // Changeable and block scoped
+            let age = 20;
+
+            // NOT changeable and block scoped
+            const year = 2022;
+
+            // Changeable and function scoped
+            var petAge = 5;
+
+            // Changeable and global scoped
+            myGlobalNumber = 1111;
+
+
+            // REASSIGNING VALUES TO VARIABLES
+            age = 0;        // 0
+            age = age + 10; // 10
+            age += 10;      // 20
+            age++;          // 21
+
+            age = "This is a string";
+
+            // Make sure to use comments to label what question you are working on
+            // Question 1
+            console.log(15 + 12 + 32 + 8 + 19 + 22 + 20 + 7);
+
+            // Question 2
+            console.log((15 + 12 + 32 + 8 + 19 + 22 + 20 + 7) / 8);
+
+            // Question 3
+            console.log(10 * 0.77);
+
+            // Question 4
+            console.log(50 * 2.2);
+
+
+            // Question 5
+            console.log(100 * 0.45);
+
+
+            // Question 6
+            console.log(2.5 * 3600);
+
+            // Question 7
+            console.log(3600 / 3600);
+
+            // Question 8
+            const tempPrompt = prompt("What is the fahrenheit temp?");
+            parseFloat(tempPrompt);
+            console.log((tempPrompt - 32) * 0.5556);
+
+
+            // Question 9
+
+            const tempPrompt2 = prompt("What is the celsius temp?");
+            parseFloat(tempPrompt2);
+            console.log((tempPrompt2 * 1.8) + 32);
+
+            // Question 10 + 11 
+
+            const myAge = parseInt(prompt("How old are you?"));
+            const birthdayThisYear = confirm("Did you have your birthday this year?")
+
+            if (birthdayThisYear) {
+                console.log("Birth year = " + (2022 - myAge));
+            }
+            else {
+                console.log("Birth year = " + (2022 - myAge - 1));
+            }
+
+            
+
+
+            // Question 12
+
+            const firstName = "Matt";
+            const lastName = "Hu";
+            alert(firstName + lastName);
+
+            // Question 13
+
+            alert(firstName + " " + lastName);
+
+            // Question 14
+
+            const fruitType = prompt("Type of fruit?");
+            const costOfFruit = prompt("Cost of fruit?");
+            const currencyUsed = prompt("What currency?");
+
+            alert(fruitType + " cost in total " + currencyUsed + costOfFruit);
+
+            // Question 15
+
+            const hobby1 = prompt("Give 1 hobby");
+            const hobby2 = prompt("Another hobby");
+            const hobby3 = prompt("One more hobby");
+            const hobby4 = prompt("Last hobby");
+
+            alert("I like the following hobbies: " + hobby1 + ", " + hobby2 + ", " + hobby3 + " and " + hobby4 + ".");
+
+            // Question 16
+
+            const urSalary = prompt("What is your salary"); 
+
+            if (urSalary < 20000) {
+                alert("You are in the Low Tax Bracket");
+
+            }
+
+            else if (20000 < urSalary && urSalary < 35000) {
+                alert("You are in the Medium Tax Bracket");
+            }
+
+            else if (urSalary > 35000) {
+                alert("You are in the High Tax Bracket");
+            }
+
+            // Question 17
+
+            
+            if (urSalary < 20000) {
+                alert("Your after tax amount is: " + urSalary * 0.9);
+
+
+            }
+
+            else if (20000 < urSalary && urSalary < 35000) {
+                alert("Your after tax amount is: " + urSalary * 0.8);
+            }
+
+            else if (urSalary > 35000) {
+                alert("Your after tax amount is: " + urSalary * 0.7);
+            }
+
+            // Question 18
+
+            if (urSalary < 20000) {
+                alert("You are in the low tax bracket. Total Tax = " + urSalary * 0.1 + ". Total Net = " + (urSalary - (urSalary * 0.1)) + ".");
+
+
+            }
+
+            else if (20000 < urSalary && urSalary < 35000) {
+                alert("You are in the medium tax bracket. Total Tax = " + urSalary * 0.2 + ". Total Net = " + (urSalary - (urSalary * 0.2)) + ".");
+            }
+
+            else if (urSalary > 35000) {
+                alert("You are in the highest tax bracket. Total Tax = " + urSalary * 0.3 + ". Total Net = " + (urSalary - (urSalary * 0.3)) + ".");
+            }
+
+
+            
+        </script>
+    </body>
+</html>
