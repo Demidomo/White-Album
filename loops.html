@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript Loops</title>
+        <style>
+            em { font-weight:bold; font-style:normal; 
+                text-decoration:underline; font-size:1.2em; 
+            }
+            h1 {
+                text-align:center;
+            }
+            ol {
+                list-style: none;
+                counter-reset: item;
+                width: 700px; 
+                position: relative; 
+                left: 50%; 
+                margin-left: -350px;
+            }
+            ol > li {
+                counter-increment: item;
+                margin-bottom: 20px;
+            }
+            ol > li:before {
+                margin-right: 10px;
+                content: counter(item);
+                background: crimson;
+                border-radius: 100%;
+                color: white;
+                width: 1.3em;
+                text-align: center;
+                display: inline-block;
+            }
+        </style>
+    </head>
+
+    <body>
+
+    	<h1>JavaScript Loops</h1>
+
+        <ol>
+            <li><em>Multiple Logs</em>
+            <br/>
+            Create 15 console.logs, one after the other, which will display the line: "This is log 1", etc. up until "This is alert 15". 
+            </li>
+            <script>
+                // Code for Q1
+                for (let i = 1; i < 16; i += 1) {
+                    console.log("This is log " + i);
+                }
+            </script>
+
+            <li><em>5 Logs Starting from 50 Going to 54</em>
+            <br/>
+            Create 5 console.logs that simply say the number 50, 51, 52, 53, 54 in each individual log. Use a for loop to do this.
+            </li>
+            <script>
+                // Code for Q2
+                for (let i = 50; i < 55; i +=1) {
+                    console.log(i);
+                }
+            </script>
+
+            <li><em>Going Backwards from 10</em>
+            <br/>
+            Create 6 logs, but this time do it using a for loop that starts at 10 and decrements in intervals of 2 units e.g. "This is log 10. This is log 8. This is log 6" etc. Do this for 5 logs.
+            </li>
+            <script>
+                // Code for Q3
+                for (let i = 10; i > 0; i-=2) {
+                    console.log("This is log " + i);
+                }
+            </script>
+
+            <li><em>Canadian Provinces 1</em>
+            <br/>
+            Create an array containing the 10 provinces of Canada. These elements must be strings. Using a loop, create a log stating the line "X is a province in Canada".
+            </li>
+            <script>
+                // Code for Q4
+
+                const province = ["Alberta", "BC", "Yukon", "NW Territory", "Nunavut", "Manitoba", "Saskatchwan", "Ontario", "Newfoundland and Labrador", "Nova Scotia"];
+
+                for (let item of province) {
+                    console.log(item + " is a province in Canada");
+                }
+            </script>
+
+            <li><em>Canadian Provinces Extended 2</em>
+            <br/>
+            Using the array you created above, make sure that Ontario is in the array. Do the same as above with creating an console.log for each province however if the province is Ontario I want the console.log to read "Ontario is a province which contains the capital city Ottawa".
+            </li>
+            <script>
+                // Code for Q4
+
+                for (let item of province) {
+                    if (item === "Ontario") {
+                        console.log("Ontario is a province which contains the capital city Ottawa");
+                    }
+                    else {
+                        console.log(item + " is a province in Canada");
+                    }
+                }
+            </script>
+
+            <li><em>Canadian Provinces Extended 3 - Only One Alert</em>
+            <br/>
+            Use the code in the previous question but instead of creating a separate console.log for each province, create a single alert containing all of the sentences. You can use the characters <code>\n</code> at the end of each sentence which adds a new line in an alert.
+            </li>
+            <script>
+                // Code for Q5
+                
+            </script>
+
+            <li><em>While Loop</em>
+            <br/>
+            Create a while loop that asks the user to input their name using a prompt. Keep asking the user for their name until they type in YOUR name. After this, alert "Hello X" where X is the name. The casing of the user's name shouldn't matter.
+            </li>
+            <script>
+                // Code for Q6
+
+                const namePlease = prompt("Input your name");
+
+                
+                while (namePlease != "Matthew") {
+                    const namePlease = prompt("Input your name");
+                    if (namePlease === "Matthew") {
+                        alert("Hello Matthew");
+                    }
+                }
+
+
+
+
+
+            </script>
+
+            <li><em>While Loop 2</em>
+            <br/>
+            Create an empty array called suitcase. Create a loop that continually asks the user if they want to add something into the suitcase. If they respond positively use a prompt and add the value into the array. Continue doing this until the user responds negatively to the question. Then end the loop and alert "The following items are in your suitcase: X, Y, Z" where those letters repesent the elements in your array.
+            </li>
+            <script>
+                // Code for Q7
+
+                const suitcase = []; 
+                
+                
+            </script>
+
+            <li><em>Count the Votes</em>
+            <br/>
+            Count the number of times Yes and No appear in this array. Use a console.log to state the numbers and announce the winner.<br>
+            <code>const voteArr = ["Yes", "Yes", "No", "Yes", "No", "Yes", "No", "Yes", "No", "No", "No", "Yes", "No", "Yes", "No"];</code>
+            </li>
+            <script>
+                // Code for Q8
+
+                
+            </script>
+
+        </ol>
+    </body>
+</html>
