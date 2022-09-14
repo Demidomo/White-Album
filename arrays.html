@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript Arrays</title>
+        <style>
+            body {
+                font-family: helvetica;
+            }
+            em { 
+                font-weight: bold; font-style: normal; 
+                text-decoration: underline; font-size: 1.2em; 
+            }
+            ol {
+                list-style: none;
+                counter-reset: item;
+                width: 700px; 
+                position: relative; 
+                left: 50%; 
+                margin-left: -350px;
+            }
+            ol > li {
+                counter-increment: item;
+                margin-bottom: 20px;
+            }
+            ol > li:before {
+                margin-right: 10px;
+                content: counter(item);
+                background: crimson;
+                border-radius: 100%;
+                color: white;
+                width: 1.3em;
+                text-align: center;
+                display: inline-block;
+            }
+            h1 {
+                text-align: center;
+            }
+        </style>
+    </head>
+
+    <body>
+
+    	<h1>JavaScript Code Arrays</h1>
+
+        <ol>
+            <li><em>Fix the broken array</em>
+            <br/>
+            The below code tries to create an array containing numbers. It has bugs preventing it from working. Fix the code and get it to console.log() the first and second item from the array.
+            </li>
+            <script>
+                // Code for Q0
+                console.log('%cQuestion 0.', 'background: #222; color: #bada55');
+                const brokenARRAY = [100, 200, 300, 400, 500];
+
+                console.log(brokenARRAY[0]);
+                console.log(brokenARRAY[1]);
+
+            </script>
+
+
+            <li><em>Days of the Week</em>
+            <br/>
+            Create an array of the seven days of the week. Each day should be a "String". Then create a console.log() for each individual day so that "Monday" to "Sunday" will appear in the console window.
+            </li>
+            <script>
+                // Code for Q1
+                console.log('%cQuestion 1.', 'background: #222; color: #bada55');
+                const weekDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+
+                console.log(weekDays[0]);
+                console.log(weekDays[1]);
+                console.log(weekDays[2]);
+                console.log(weekDays[3]);
+                console.log(weekDays[4]);
+                console.log(weekDays[5]);
+                console.log(weekDays[6]);
+
+
+            </script>
+
+            <li><em>Months of the Year</em>
+            <br/>
+            Create an array containing strings of the names of each month of the year. Then using the array, show a console log that states the 3 months of summer like so "X, Y and Z are the months of summer."
+            </li>
+            <script>
+                // Code for Q2
+                console.log('%cQuestion 2.', 'background: #222; color: #bada55');
+                const months = ["January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+
+                console.log(months[5] + " , " +  months[6] + " and " + months[7] + " are the months of summer.")
+
+            </script>
+
+            <li><em>How Many Months</em>
+            <br/>
+            Extend the code above so that it will console log "There are X months in a year" where X refers to the size of the array.
+            </li>
+            <script>
+                // Code for Q3
+                console.log('%cQuestion 3.', 'background: #222; color: #bada55');
+
+                console.log("There are " + months.length + " months in a year.");
+
+
+            </script>
+
+            <li><em>Sorting Arrays</em>
+            <br/>
+            Arrange the array given below so that it is in alphabetical order A -> Z. Do not do this manually. Use a console.log to view the result.<br><code>const alphaArr = ["Berry", "Abacus", "Elephant", "Dolphin", "Engineer"];</code>
+            </li>
+            <script>
+                // Code for Q4
+                console.log('%cQuestion 4.', 'background: #222; color: #bada55');
+
+                const alphaArr = ["Berry", "Abacus", "Elephant", "Dolphin", "Engineer"];
+
+                console.log(alphaArr.sort());
+
+
+            </script>
+
+            <li><em>Check if Element is Inside Array</em>
+            <br/>
+            Write code that will check if "Yes" appears inside the array. If it does create an alert that states "Yes appears in position X" where X is the indexed position.<br>
+            <code>const noYesArr = ["No", "No", "No", "No", "No", "Yes", "No", "No"];</code>
+            </li>
+            <script>
+
+                // Code for Q5
+                console.log('%cQuestion 5.', 'background: #222; color: #bada55');
+                const noYesArr = ["No", "No", "No", "No", "No", "Yes", "No", "No"];
+
+                console.log("Yes appears in position "+ noYesArr.indexOf("Yes"));
+
+            </script>
+
+            <li><em>Edit Item in Array</em>
+            <br/>
+            Use what you have created above and extend the code so that if it finds "Yes" in the array it will change it to "Not Yes Anymore". Use the new array provided.<br>
+            <code>const onlyNoArr = ["No", "No", "Yes", "No", "No", "No", "No", "No"];</code>
+            </li>
+            <script>
+                // Code for Q6
+                console.log('%cQuestion 6.', 'background: #222; color: #bada55');
+                const onlyNoArr = ["No", "No", "Yes", "No", "No", "No", "No", "No"];
+
+                const index = onlyNoArr.indexOf("Yes");
+
+                onlyNoArr.splice(index, 1, "Not Yes Anymore");
+                console.log(onlyNoArr);
+
+
+            </script>
+
+            <li><em>Adding to Array that Already Exists</em>
+            <br/>
+            Create an array that holds 4 colour names as strings. Create an alert that says how many elements are inside this array. Then ask the user to add a new colour and then store this value inside the array. Repeat this process one more time so that 2 new colours are added to the array.<br>
+            Then create an alert that will state the new amount of elements inside the array. Finally create a single alert that will state each element inside the array separated by these characters ###.
+            </li>
+            <script>
+                // Code for Q7
+                console.log('%cQuestion 7.', 'background: #222; color: #bada55');
+
+                const colorArr = ["Blue", "Turquoise", "Lime", "Orange"];
+                const userColor = prompt("Add a new color");
+                const userColor2 = prompt("Add another color");
+
+                colorArr.push(userColor);
+                colorArr.push(userColor2);
+
+                const colorAlert = alert("There are " + colorArr.length + " elements inside the array");
+                const elementAlert = alert(colorArr[0] + "###" + colorArr[1] + "###" + colorArr[2] + "###" + colorArr[3] + "###" + colorArr[4] + "###" + colorArr[5] )
+
+
+
+            </script>
+
+            <li><em>Removing from Array</em>
+            <br/>
+            Remove the first, last and third item from the array. In 2 separate console.logs, list the array in its new form and separately all the elements that were removed.<br>
+            <code>const removeArray = ["first", "second", "third", "fourth", "fifth"];</code>
+            </li>
+            <script>
+                // Code for Q8
+                console.log('%cQuestion 8.', 'background: #222; color: #bada55');
+
+                const removeArray = ["first", "second", "third", "fourth", "fifth"];
+                
+                console.log(removeArray.join(", "));
+
+                removeArray.splice(0, 1);
+                removeArray.splice(3, 1);
+                removeArray.splice(1, 1);
+
+                console.log(removeArray.join(", "));
+
+
+
+            </script>
+
+        </ol>
+    </body>
+</html>
