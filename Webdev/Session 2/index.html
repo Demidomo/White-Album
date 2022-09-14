@@ -5,47 +5,73 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
 
     <form>
-        <img src="assets/logo.jpg">
+        <img width="100" src="assets/logo.jpg">
         <h1>Sign up</h1>
         <h5>It's free and only takes a minute</h5>
-        <div>
+        <div class="input-container">
             <label>First Name</label>
-            <input type="text">
+            
         </div>
 
-        <div>
+        <div> 
+            <input type="text" placeholder="Write your first name here">
+        </div>
+
+        <div class="input-container">
             <label>Last Name</label>
-            <input type="text">
+           
         </div>
 
         <div>
+            <input type="text" placeholder="Write your last name here">
+        </div>
+
+        <div class="input-container">
             <label>Email</label>
-            <input type="text">
+            
         </div>
 
-        <div>
+        <div> 
+            <input type="text" placeholder="Write your email here">
+        </div>
+
+        <div class="input-container">
             <label>Password</label>
-            <input type="text">
+            
+        </div>
+
+        <div> 
+            <input type="password" placeholder="Write your password here">
+        </div>
+
+        <div class="input-container">
+            <label>Confirm Password</label>
+           
         </div>
 
         <div>
-            <label>Confirm Password</label>
-            <input type="text">
+            <input type="password" placeholder="Write your password again">
         </div>
 
-        <button>Sign Up</button>
+        <div class="input-container">
+            <button id="signup-button">Sign Up</button>
+        </div>
+
 
         <span>By Clicking the signup button, you agree to our <a href="#">Terms & Conditions</a> and <a href="#">Private
                 Policy</a> </span>
     </form>
 
-    <p>
+    <p id="paragraph-footer">
         Already have an account? <a href="#">Login here</a>
     </p>
 
