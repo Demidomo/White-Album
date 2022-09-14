@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>First JavaScript Coding 2</title>
+
+        <style>
+            body {
+                font-family: helvetica;
+            }
+            h1 {
+                text-align: center;
+            }
+            ol {
+                list-style: none;
+                counter-reset: item;
+            }
+            ol > li {
+                counter-increment: item;
+                margin-bottom: 15px;
+            }
+            ol > li:before {
+                margin-right: 10px;
+                content: counter(item);
+                background: crimson;
+                border-radius: 100%;
+                color: white;
+                width: 1.3em;
+                text-align: center;
+                display: inline-block;
+            }
+        </style>
+    </head>
+
+    <body>
+    	<h1>JavaScript Code 2</h1>
+        <p>Use <code>console.log()</code> to output the results of the below questions unless asked to alert them specifically. Feel free to comment out completed questions if the amount of <code>console.logs()</code> takes up too much space in the console window.</p>
+
+        <script>
+            /*
+            console.log("Hello World");
+
+            const myNumber = 10;
+
+            if (myNumber > 9) {
+                alert("myNumber is greater than 9. Its value is " + myNumber);
+
+            }
+            */
+        </script>
+        <ol>
+            <li>The below if else statement is broken because of syntax errors and some logic errors. Take a look at your notes to fix this code and make it work. The code is supposed to check if the variable <b>happiness</b> is true. If it is, "You are happy" should be console.log(). If not then "You are sad" should be logged. When you think it is fixed, try changing the value of <b>happiness</b> to get a different console.log()</li>
+            <script>
+                // Question 1
+                console.log('%cQuestion 1.')
+                const happiness = false;
+
+                if (happiness === true) {
+                    console.log('You are happy');
+                }
+                else {
+                    console.log('You are sad');
+                }
+            </script>
+
+            <li>Ask the user, using a confirm() box if they have brown hair and store this value in a variable called <b>userHasBrownHair</b>. Remember the confirm box will be true if the user clicks the OK button and false if the user clicks Cancel. then, write an if else statement that will console.log() "You have brown hair" if they do and "You do not have brown hair" if they don't.</li>
+            <script>
+                // Question 2
+                console.log('%cQuestion 2.')
+                const userHasBrownHair = confirm("Do you have brown hair?");
+                if (userHasBrownHair) {
+                console.log("You have brown hair.");
+            }
+            else {
+                console.log("You do not have brown hair.");
+            }
+
+
+            </script>
+
+
+            <li>Create a program that uses an <code>if else statememts</code> that asks the user to type in a season. Depending on what season is mentioned, in a single <code>console.log()</code> list off all the months in that season. e.g. if a user types "summer" then you should console.log("June, July, August"). If no season is mentioned console.log "No such season exists".</li>
+            <li>--> After doing the above, extend the above so that if the user uses different letter casing (capital letters or not) it should still list off the correct months e.g. "SuMmer" should also console.log("June, July, August")</li>
+            <script>
+                // Question 3.
+                console.log('%cQuestion 3. & 4.')
+                const seasonChosen = prompt("Type in a season.");
+               
+
+                switch (seasonChosen.toUpperCase()) {
+                    case 'SPRING':
+                        console.log("March, April, May");
+                        break;
+                    case 'SUMMER':
+                        console.log("June, July, August");
+                        break;
+                    
+                    case 'FALL':
+                        console.log("September, October, November");
+                        break;
+                    case 'WINTER':
+                        console.log("December, January, Febuary");
+                        break;
+                    default: 
+                        console.log("No such season exist.");
+
+                    
+
+                }
+    
+            </script>
+
+            <li>Create a boole called <b>liveInCanada</b> and set it to be either true or false. Create a variable called <b>primeMinister</b> its value will be determined by the following. The value will be "Justin Trudeau" if <b>liveInCanada</b> is true and "Joe Biden" if it is false. Lastly make a console.log() that says "The prime minister of your country is X" where X is the variable <b>primeMinister</b>.</li>
+            <script>
+                // Question 5
+                console.log('%cQuestion 5.')
+                const liveInCanada = confirm("Do you live in Canada");
+                
+
+                if (liveInCanada === true) {
+                    const primeMinister = "Justin Trudeau";
+                    console.log("The prime minister of your country is " + primeMinister);
+                }
+                else {
+                    const primeMinister = "Joe Biden";
+                    console.log("The prime minister of your country is " + primeMinister);
+                }
+
+
+
+    
+            </script>
+
+            <li>Create two boolean variables called passport and suitcase. They can be either true or false. Write a script that checks to see if these are both true. If not then alert "You are not going on holiday because you are missing something important". If both are true then ask the user what country they would like to visit. Note that it is OK to have an if statement in the block of code of another if statememt. If they type either Canada, USA or Mexico (regardless of casing) console.log() "You are going on holiday in North America". If they type anything else, console.log() "Enjoy your holiday in X" where X is what they typed.</li>
+            <script>
+                // Question 6
+                console.log('%cQuestion 6.')
+
+                const passport = confirm("Do you have your passport?");
+                const suitcase = confirm("Do you have your suitcase");
+
+                if (passport == true && suitcase == true) {
+                    const country = prompt("What country would you like to visit?");
+                    if (country.toUpperCase() === "CANADA" || country.toUpperCase() === "USA" || country.toUpperCase() === "MEXICO")  {
+                        console.log("You are going on holiday in North America");
+                    }
+                    else {
+                        console.log("Enjoy your holiday in " + country);
+                    }
+                }
+
+                else {
+                    alert("You are not going on holiday because you are missing something important");
+                }
+    
+            </script>
+
+            <li>Ask the user to type their name into a prompt. Check to see if the first letter of their name is capitalized. If it is, console.log "Your name begins with X which is capitalized" where X is their first letter capitalized. If it doesn't, console.log "Your name begins with x which is in lower case".</li>
+            <script>
+                // Question 7
+                console.log('%cQuestion 7.')
+                const typedName = prompt("Type in your name here");
+                const upperCaseName = typedName.toUpperCase();
+
+                if (typedName.charAt(0) === upperCaseName.charAt(0)) {
+                    console.log("Your name begins with " + typedName.charAt(0) + " which is capitalized");
+                }
+
+                else {
+                    console.log("Your name begins with " +typedName.charAt(0) + " which is in lower case");
+                }
+    
+            </script>
+
+            <li>Create a Rock, Paper, Scissors game where the user is asked to type in one of those objects. The code below randomly chooses between the three objects when the web page loads and acts as the computer's choice. Copy this code and use it to check if the user has won, lost or tied their game. Alert, using an alert(), the appropriate outcome like so "Computer chose Rock. User chose Paper. Win".<br>
+                <code>const computerChoice = ["Rock", "Paper", "Scissors"][Math.floor(Math.random() * (3))];</code>
+            </li>
+            <script>
+                // Question 8
+                console.log('%cQuestion 8.')
+                const userAnswer = prompt("Rock, paper, or scissors?");
+                
+                
+                const computerChoice = ["Rock", "Paper", "Scissors"][Math.floor(Math.random() * (3))];
+
+                if (userAnswer === "Rock" && computerChoice === "Rock") {
+                    alert("Computer chose Rock. User chose Rock. Tie");
+                }
+
+                else if (userAnswer === "Rock" && computerChoice === "Paper") {
+                    alert("Computer chose Paper. User chose Rock. Lost");
+                }
+
+                else if (userAnswer === "Rock" && computerChoice === "Scissors") {
+                    alert("Computer chose Scissors. User chose Rock. Win");
+                }
+                
+                else if (userAnswer === "Paper" && computerChoice === "Paper") {
+                    alert("Computer chose Paper. User chose Paper. Tie");
+                }
+
+                else if (userAnswer === "Paper" && computerChoice === "Rock") {
+                    alert("Computer chose Rock. User chose Paper. Win");
+                }
+
+                else if (userAnswer === "Paper" && computerChoice === "Scissors") {
+                    alert("Computer chose Scissors. User chose Paper. Lost");
+                }
+
+                else if (userAnswer === "Scissors" && computerChoice === "Scissors") {
+                    alert("Computer chose Scissors. User chose Scissors. Tie");
+                }
+
+                else if (userAnswer === "Scissors" && computerChoice === "Rock") {
+                    alert("Computer chose Rock. User chose Scissors. Lost");
+                }
+
+                else if (userAnswer === "Scissors" && computerChoice === "Paper") {
+                    alert("Computer chose Paper. User chose Scissors. Win");
+                }
+
+
+
+
+
+
+        
+
+
+
+    
+            </script>
+
+            <li>If you have completed all of the questions, rewrite Question 3 & 4 to use a Switch Statement instead of an if else statement. Also rewrite Question 5 so that you use a ternary operator to assign the value of primeMinister instead of an if else statement. Check the notes to see how to do this.
+            </li>
+
+        </ol>
+
+    </body>
+</html>
