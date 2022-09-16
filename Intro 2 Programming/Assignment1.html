@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Assignment 1</title>
+    <style>
+        body {
+            font-family: helvetica;
+        }
+
+        h1 {
+            color: crimson;
+        }
+
+        em {
+            font-weight: bold;
+            font-style: normal;
+            text-decoration: underline;
+            font-size: 1.2em;
+        }
+
+        li {
+            margin: 20px;
+        }
+
+        ol {
+            width: 700px;
+            position: relative;
+            left: 50%;
+            margin-left: -350px;
+        }
+
+        p {
+            width: 700px;
+            position: relative;
+            left: 50%;
+            margin-left: -350px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        ul>li {
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<h1>Introduction to Programming Assignment 1</h1>
+
+<p>
+    Complete the following tasks.
+    <br>
+    <em>60%</em> of the marks will go to successfully completing the tasks free of errors.
+    <br>
+    <em>20%</em> of the marks will go to how well you comment your code. This also incorporates good naming conventions
+    for variables.
+    <br>
+    <em>20%</em> of the marks will go to how efficient your code is using the methods you have learned to this point.
+</p>
+
+<ol>
+
+    <li><em>Complicated Tax Calculator</em>
+        <br />
+        In a previous class you wrote pseudocode and flow charts to calculate tax. This problem is very similar to that
+        but may contain some changes and additions.<br>
+        Write code that will ask the user, using a prompt, what their monthly gross income is. If the user doesn't type
+        in a number tell them their mistake with an alert and do not proceed with the calculation.
+        <ul>
+            <li>If the user earns less than or equal to 500 dollars the tax taken is 0 and they are in the low tax
+                bracket. Only for these people should you do the following. Ask the user how many children they have.
+                For each child that they have, give them 10 dollars in child benefits. If the user does not type in a
+                number they get 0 dollars in child benefits.</li>
+            <li>If the user earns more than 500 dollars but less than or equal to 700 they are in the medium tax
+                bracket. Tax taken here should be 15% of any sum that is over 500.</li>
+            <li>If the user earns more than 700 dollars they are in the high tax bracket. Tax taken here should be 15%
+                of the sum that is over 500 but less than or equal to 700 and 25% of everything over 700.</li>
+        </ul>
+        The final result should show in a single alert the user's gross income, the tax bracket (low, medium or high),
+        total tax, child benefits and net income (gross + child benefits - tax).
+
+        <p>Gross Salary = 400, Number of Kids = 2, Bracket = Low, Net Income = 420<br>
+            Gross Salary = 620, Bracket = Medium, Net Income = 602<br>
+            Gross Salary = 900, Bracket = High, Net Income = 820.15</p>
+    </li>
+
+    <script>
+        // ====================
+        // 1.) Complicated Tax Calculator
+        // ====================
+
+        const urSalary = prompt("What is your monthly gross income?");
+        
+        
+
+        if (urSalary <= 500) {
+            
+            const children = prompt("How many children do you have")
+            if (children === 0) {
+                const childBenefit = 0;
+            }
+            else if (children !== 0) {
+                const childBenefit = children * 10; 
+            }
+
+            alert("You are in the Low Tax Bracket");
+        }
+
+        else if (500 < urSalary && urSalary < 700) {
+            alert("You are in the Medium Tax Bracket");
+        }
+
+        else if (urSalary > 700) {
+            alert("You are in the High Tax Bracket");
+        }
+
+        else if (urSalary != int) {
+            alert("That was not a number, please try again with a number");
+        }
+
+    </script>
+
+    <li><em>Person's Details</em>
+        <br>
+        Ask a user to type in their first and last name into a single prompt separated by a space. You can assume the
+        user will do this correctly.<br>
+        In a single alert write the following message where the square brackets represents values:
+        <ul>
+            <li>Hello [first and last name of user].</li>
+            <li>Your name is [number of letters in name] letters long.</li>
+            <li><i>depending on whether this is true or not show the following output</i> Your name begins with a vowel
+                which is the letter [first letter of their name in capital letter]. <i>or</i> Your name beings with a
+                consonant which is the letter [first letter of their name in capital letter].</li>
+            <li>The last letter of your name is [last letter of their last name in lower case].</li>
+        </ul>
+    </li>
+
+    <script>
+                // =================== 
+                // 2.) Person's Details
+                // ===================
+
+    </script>
+</ol>
+</body>
+
+</html>
