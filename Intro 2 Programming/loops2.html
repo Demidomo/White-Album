@@ -227,9 +227,13 @@
                 const addThings = prompt("Do you want to add things to the suitcase?");
 
                 if (addThings === "No") {
-                    const listSuitcase = alert("The following item are in your suitcase" + suitcase);
+                    const listSuitcase = alert("The following item are in your suitcase: " + suitcase);
                     break;
                 }
+            }
+
+            if (addThings ==="No") {
+                const listSuitcase = alert("You got nothing in your suitcase");
             }
 
 
@@ -250,7 +254,7 @@
             const yesCount = [];
             const noCount = [];
 
-            
+
             for (let item of voteArr) {
 
 
