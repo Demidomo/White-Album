@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Loops</title>
+    <style>
+        body {
+            font-family: helvetica;
+        }
+
+        em {
+            font-weight: bold;
+            font-style: normal;
+            text-decoration: underline;
+            font-size: 1.2em;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        ol {
+            list-style: none;
+            counter-reset: item;
+            width: 700px;
+            position: relative;
+            left: 50%;
+            margin-left: -350px;
+        }
+
+        ol>li {
+            counter-increment: item;
+            margin-bottom: 20px;
+        }
+
+        ol>li:before {
+            margin-right: 10px;
+            content: counter(item);
+            background: crimson;
+            border-radius: 100%;
+            color: white;
+            width: 1.3em;
+            text-align: center;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>JavaScript Loops</h1>
+
+    <ol>
+        <li><em>Fix Broken for loop</em>
+            <br />
+            The below for loop is broken because of syntax and logic errors. Look at your notes to see how to correctly
+            create a for loop and fix the bugs. The loop is supposed to console.log() the "number 1", "number 2" and
+            "number 3".
+        </li>
+        <script>
+            // Code for Q1
+            console.log('%cQuestion 1.', 'background: #222; color: #bada55');
+            for (var i = 0; i > 4; i = +1) {
+                console.log(`number ${i}`);
+            }
+
+        </script>
+
+
+        <li><em>Multiple Logs</em>
+            <br />
+            Create 15 console.logs, one after the other, which will display the line: "This is log 1", etc. up until
+            "This is log 15".
+        </li>
+        <script>
+            // Code for Q2
+            console.log('%cQuestion 2.', 'background: #222; color: #bada55');
+            for (let i = 1; i < 16; i += 1) {
+                console.log("This is log " + i);
+            }
+
+        </script>
+
+        <li><em>5 Logs Starting from 50 Going to 54</em>
+            <br />
+            Create 5 console.logs that simply say the number 50, 51, 52, 53, 54 in each individual log. Use a for loop
+            to do this.
+        </li>
+        <script>
+            // Code for Q3
+            console.log('%cQuestion 3.', 'background: #222; color: #bada55');
+            for (let i = 50; i < 55; i += 1) {
+                console.log(i);
+            }
+
+        </script>
+
+        <li><em>Going Backwards from 10</em>
+            <br />
+            Create 6 logs, but this time do it using a for loop that starts at 10 and decrements in intervals of 2 units
+            e.g. "This is log 10. This is log 8. This is log 6" etc. Do this for 5 logs.
+        </li>
+        <script>
+            // Code for Q4
+            console.log('%cQuestion 4.', 'background: #222; color: #bada55');
+            for (let i = 10; i > -2; i -= 2) {
+                console.log("This is log " + i);
+            }
+
+        </script>
+
+        <li><em>Fix Broken for of loop</em>
+            <br />
+            The below <u>for of</u> loop is broken because of syntax errors. Remember a <u>for of</u> loop is best used
+            on arrays. Look at your notes to see how to correctly create a <u>for of</u> loop and fix the bugs. The loop
+            is supposed to console.log() each element in the colourArray array like so "item is RED", "item is ORANGE"
+            and "item is GREEN".
+        </li>
+        <script>
+            // Code for Q5
+            console.log('%cQuestion 5.', 'background: #222; color: #bada55');
+            const colourArray = ["RED", "ORANGE", "GREEN"];
+            for (let col of colourArray) {
+                console.log(col);
+            }
+
+        </script>
+
+        <li><em>Canadian Provinces 1</em>
+            <br />
+            Create an array containing the 10 provinces of Canada. These elements must be strings. Using a loop that
+            works well with arrays, create a console.log stating the following "X is a province in Canada" for each
+            province.
+        </li>
+        <script>
+            // Code for Q6
+            console.log('%cQuestion 6.', 'background: #222; color: #bada55');
+            const province = ["Alberta", "BC", "Yukon", "NW Territory", "Nunavut", "Manitoba", "Saskatchwan", "Ontario", "Newfoundland and Labrador", "Nova Scotia"];
+
+            for (let item of province) {
+                console.log(item + " is a province in Canada");
+            }
+
+        </script>
+
+        <li><em>Canadian Provinces Extended 2</em>
+            <br />
+            Using the array you created above, make sure that Ontario is in the array. Do the same as above with
+            creating an console.log for each province however if the province is Ontario I want the console.log to read
+            "Ontario is a province which contains the capital city Ottawa". You will want to add an if else statement
+            inside your for loop block. For all the other provinces just log "X is a province in Canada".
+        </li>
+        <script>
+            // Code for Q7
+            console.log('%cQuestion 7.', 'background: #222; color: #bada55');
+            for (let item of province) {
+                if (item === "Ontario") {
+                    console.log("Ontario is a province which contains the capital city Ottawa");
+                }
+                else {
+                    console.log(item + " is a province in Canada");
+                }
+            }
+
+        </script>
+
+        <li><em>Canadian Provinces Extended 3 - Only One console.log</em>
+            <br />
+            Use the code in the previous question but instead of creating a separate console.log for each province,
+            create a single alert containing all of the sentences. You can use the character <code>\n</code> at the end
+            of each sentence which adds a new line in the console.log. For
+            instance<br><code>console.log("Top Line \n Bottom Line")</code><br>
+            Will appear as:<br>
+            Top Line<br>
+            Bottom Line
+        </li>
+        <script>
+            // Code for Q8
+            console.log('%cQuestion 8.', 'background: #222; color: #bada55');
+            const alertProv = alert(province.join("\n"));
+
+
+        </script>
+
+        <li><em>While Loop</em>
+            <br />
+            Create a while loop that asks the user to input their name using a prompt. Keep asking the user for their
+            name until they type in YOUR name. After this, alert "Hello X" where X is the name. The casing of the user's
+            name shouldn't matter.
+        </li>
+        <script>
+            // Code for Q9
+            console.log('%cQuestion 9.', 'background: #222; color: #bada55');
+            const namePlease = prompt("Input your name");
+
+
+            while (namePlease !== "Matthew") {
+                const namePlease = prompt("Input your name");
+                if (namePlease === "Matthew") {
+                    alert("Hello Matthew");
+                    break;
+                }
+
+
+            }
+
+        </script>
+
+        <li><em>While Loop 2</em>
+            <br />
+            Create an empty array called suitcase. Create a loop that continually asks the user if they want to add
+            something into the suitcase. If they respond positively use a prompt and add the value into the array.
+            Continue doing this until the user responds negatively to the question. Then end the loop and alert "The
+            following items are in your suitcase: X, Y, Z" where those letters repesent the elements in your array.
+        </li>
+        <script>
+            // Code for Q10
+            console.log('%cQuestion 10.', 'background: #222; color: #bada55');
+
+            const suitcase = [];
+            const addThings = prompt("Do you want to add things to the suitcase?");
+
+            while (addThings === "Yes") {
+
+                const itemsToAdd = prompt("What do you want to add?");
+                suitcase.push(itemsToAdd);
+                const addThings = prompt("Do you want to add things to the suitcase?");
+
+                if (addThings === "No") {
+                    const listSuitcase = alert("The following item are in your suitcase" + suitcase);
+                    break;
+                }
+            }
+
+
+
+        </script>
+
+        <li><em>Count the Votes</em>
+            <br />
+            Count the number of times Yes and No appear in this array. Use a console.log to state the number of times
+            "Yes" and "No" appear in the arraay. In another console.log state which one is the winner.<br>
+            <code>const voteArr = ["Yes", "Yes", "No", "Yes", "No", "Yes", "No", "Yes", "No", "No", "No", "Yes", "No", "Yes", "No"];</code>
+        </li>
+        <script>
+            // Code for Q11
+            console.log('%cQuestion 11.', 'background: #222; color: #bada55');
+            const voteArr = ["Yes", "Yes", "No", "Yes", "No", "Yes", "No", "Yes", "No", "No", "No", "Yes", "No", "Yes", "No"];
+
+            const yesCount = [];
+            const noCount = [];
+
+            
+            for (let item of voteArr) {
+
+
+                if (item === "Yes") {
+                    yesCount.push("yes");
+                }
+
+                else if (item === "No") {
+                    noCount.push("no");
+                }
+
+            }
+
+            console.log("Yes appeared " + yesCount.length + " Times");
+            console.log("No appeared " + noCount.length + " times.");
+
+            if (yesCount.length > noCount.length) {
+                console.log("Yes is the winner");
+            }
+            else {
+                console.log("No is the winner");
+            }
+
+
+
+
+
+
+
+        </script>
+
+    </ol>
+</body>
+
+</html>
