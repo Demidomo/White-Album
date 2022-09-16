@@ -1,5 +1,32 @@
 hello world 
 
+Repository for Computer System Design Courses
+
+- Intro 2 Programming 
+- Web Dev 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # White-Album
 1968, Genre: Rock 
 
