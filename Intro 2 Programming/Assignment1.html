@@ -67,21 +67,17 @@
         <br />
         In a previous class you wrote pseudocode and flow charts to calculate tax. This problem is very similar to that
         but may contain some changes and additions.<br>
-        Write code that will ask the user, using a prompt, what their monthly gross income is.
-        If the user doesn't type in a number tell them their mistake with an alert and do not proceed with the
-        calculation.
+        Write code that will ask the user, using a prompt, what their monthly gross income is. If the user doesn't type
+        in a number tell them their mistake with an alert and do not proceed with the calculation.
         <ul>
             <li>If the user earns less than or equal to 500 dollars the tax taken is 0 and they are in the low tax
-                bracket. Only for these people should you do the following.
-                Ask the user how many children they have.
-                For each child that they have, give them 10 dollars in child benefits.
-                If the user does not type in a
+                bracket. Only for these people should you do the following. Ask the user how many children they have.
+                For each child that they have, give them 10 dollars in child benefits. If the user does not type in a
                 number they get 0 dollars in child benefits.</li>
             <li>If the user earns more than 500 dollars but less than or equal to 700 they are in the medium tax
                 bracket. Tax taken here should be 15% of any sum that is over 500.</li>
-            <li>If the user earns more than 700 dollars they are in the high tax bracket.
-                Tax taken here should be 15% of the sum that is over 500 but less than or equal to 700 
-                and 25% of everything over 700.</li>
+            <li>If the user earns more than 700 dollars they are in the high tax bracket. Tax taken here should be 15%
+                of the sum that is over 500 but less than or equal to 700 and 25% of everything over 700.</li>
         </ul>
         The final result should show in a single alert the user's gross income, the tax bracket (low, medium or high),
         total tax, child benefits and net income (gross + child benefits - tax).
@@ -96,73 +92,68 @@
         // 1.) Complicated Tax Calculator
         // ====================
 
-        const urSalary = prompt("Please enter your monthly gross income: ");
-        const urSalaryToFloat = parseFloat(urSalary);
+        //Make a prompt to ask users their monthly income. 
+        ////Convert the answer from string to a number that can be a decimal number.
+        const grossIncome = parseFloat(prompt("Please enter your monthly income:"));
 
+        //Situation 1) Monthly income<=500.
+        //Low tax bracket, no tax.
+        if (grossIncome <= 500) {
 
-        /* 
-        When the user earns less than or equal to 500 dollars. 
-        There are 2 outcomes here if the user has kids or no kids. 
-        */ 
-        if (urSalaryToFloat <= 500) {
+            //Make a prompt to ask the users the number of children they have.
+            //Convert the answer from a string to a number.
+            let child = parseInt(prompt("How many children do you have?"));
 
-            const kidCount = prompt("How many children do you have?")
-            const kidCountToInt = parseInt(kidCount);
+            if (child >= 0) {
 
-            if (kidCountToInt === 0 || kidCountToInt == 0 ) {
-                alert("Gross Salary = " + urSalaryToFloat + ", Number of Kids = 0, Bracket = Low, Net Income = " + urSalaryToFloat); 
+                const childBen = child * 10; //get $10 for each child they have.
+                const lowNetIcome = grossIncome + childBen;
+
+                alert("Gross Income = " + grossIncome + ", The tax bracket = Low, Total tax = 0, Child benefits = " + childBen + ", Net Income = " + lowNetIcome);
+
             }
+            
+            else {
 
-            else if (kidCountToInt != 0 && kidCountToInt > 0) {
+                //User doesnt type in a number get 0 child benefit.
+                alert("Gross Income = " + grossIncome + ", The tax bracket = Low, Total tax = 0, Child benefits = 0, Net Income = " + grossIncome);
 
-                const childBenefit = kidCountToInt * 10;
-                const lowNetIncome = urSalaryToFloat + childBenefit;
-
-                alert("Gross Salary = " + urSalaryToFloat + ", Number of Kids = " + kidCountToInt + ", Bracket = Low, Net Income = " + lowNetIncome);
-                
             }
-
-            
-
-            
         }
 
-        /* 
-        When the user earns more than 500 dollars but less than or equal to 700.
-        Tax is 15% of the amount greater than $500. 
-        */
-        
-        else if (500 < urSalaryToFloat && urSalaryToFloat <= 700) {
-            const medTax = (urSalaryToFloat - 501) * 0.15;
-            const medNetIncome = urSalaryToFloat - medTax;
+        //Situation 2) Monthly income > 500 and <=700.
+        //Mid tax bracket, tax rate is 15% of any sum that is over 500.
+        else if (grossIncome > 500 && grossIncome <= 700) {
 
-            alert("Gross Salary = " + urSalaryToFloat + ", Bracket = Medium, Net Income = " + medNetIncome);
-        }
+            const midTax = (grossIncome - 501) * 0.15; 
+            const midNetIncome = parseInt(grossIncome - midTax); //The result should be a integer instead of a decimal number.
 
-        /* 
-        When the user earns more than 700 dollars.
-        Taxes are 15% of the amount greater than $500 but less than/equal to $700,
-        and 25% of amount greater than $700.
-        */
-        else if (urSalaryToFloat >= 701 ) {
-        
-            const highTax15 = 200*0.15;
-            const highTax15ToDec = highTax15.toFixed(2);
-            const highTax25ToDec = highTax25.toFixed(2);
-            const highTax25 = (urSalaryToFloat - 701) * 0.25;
-            const highNetIncome = urSalaryToFloat - highTax15ToDec - highTax25ToDec; 
-
-            const highNetIncomeToDec = highNetIncome.toFixed(2);
-
-            alert("Gross Salary = " + urSalaryToFloat + ", Bracket = High, Net Income = " + highNetIncomeToDec);
+            alert("Gross Income = " + grossIncome + ", The tax bracket = Medium, Total tax = " + midTax + ", Child benefits = 0, Net Income = " + midNetIncome);
 
         }
 
+        //Situation 3) Monthly income > 700.
+        //High tax bracket, tax rate is 15% of any sum that is over 500 plus 25% of any sum that is over 699.
+        else if (grossIncome > 700) {
+
+            const before700Tax = (700-501)*0.15;
+            const after700Tax = (grossIncome - 700) * 0.25;
+            const totalTax = before700Tax + after700Tax;
+            const hightNetIncome = grossIncome - totalTax;
+
+            alert("Gross Income = " + grossIncome + ", The tax bracket = High, Total tax = " + totalTax + ", Child benefits = 0, Net Icnome = " + hightNetIncome);
+
+        }
+
+        //Situation 4) Any other situations.
+        //Dont process any calculations.
         else {
-            alert("Please try again");
+
+            alert("You should type in a number.");
+
         }
 
-        
+
     </script>
 
     <li><em>Person's Details</em>
@@ -181,35 +172,38 @@
     </li>
 
     <script>
-                // =================== 
-                // 2.) Person's Details
-                // ===================
+        // =================== 
+        // 2.) Person's Details
+        // ===================
 
+        //Make a prompt to ask users their first name and last name.
+        //Assume the user will type in their name separated by a space.
+        const name = prompt("Type your first name and last name separated by a space.");
 
-                const typedName = prompt("Please type in your first and last name");
-                const upperCaseName = typedName.toUpperCase();
-                const nameLength = (typedName.length) - 1;
+        const length = name.length - 1; //Not include a space, so result-1.
+        const firstLetter = name.charAt(0); //First letter of the name.
+        const firstLetterLow = firstLetter.toLowerCase(); //In case, users type in their name that the first letter is upper case.
+        const lastLetter = name.charAt(name.length - 1); //Last letter of the name.
 
-                const lastLetter = typedName.charAt(typedName.length - 1);
-                const lowerLastLetter = lastLetter.toLowerCase();
+        //Situation 1) Vowel.
+        if (firstLetterLow == "a" || firstLetterLow == "e" || firstLetterLow == "i" || firstLetterLow == "o" || firstLetterLow == "u") {
 
-                if (upperCaseName.charAt(0) === "A" ||
-                upperCaseName.charAt(0) === "E" ||
-                upperCaseName.charAt(0) === "I" ||
-                upperCaseName.charAt(0) === "O" ||
-                upperCaseName.charAt(0) === "U") {
-                    alert("Hello " + typedName + "." + "\n" +
-                    "Your name is " + nameLength + " letters long." + "\n" +
-                    "Your name begins with a vowel which is the letter" + upperCaseName.charAt(0) + "\n" +
-                    "The last letter of your name is " + lowerLastLetter + ".");
-                }
+            alert("Hello " + name + ".\n" +
+                  "Your name is " + length + " letters long.\n" +
+                  "Your name begins with a vowel which is the letter " + firstLetter + ".\n" +
+                  "The last letter of your name is " + lastLetter + ".");
 
-                else {
-                    alert("Hello " + typedName + "." + "\n" +
-                    "Your name is " + nameLength + " letters long." + "\n" +
-                    "Your name begins with a consonant which is the letter " + upperCaseName.charAt(0) + "\n" + 
-                    "The last letter of your name is " + lowerLastLetter + ".");
-                }
+        }
+
+        //Situation 2) Consonant.
+        else {
+
+            alert("Hello " + name + ".\n" +
+                  "Your name is " + length + " letters long.\n" +
+                  "Your name begins with a consonant which is the letter " + firstLetter + ".\n" +
+                  "The last letter of your name is " + lastLetter + ".");
+
+        }
 
 
 
