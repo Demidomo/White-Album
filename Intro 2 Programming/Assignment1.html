@@ -100,7 +100,6 @@
         const monthSalary = prompt("Please enter your monthly gross income: ");
         const monthSalaryToInt = parseInt(monthSalary);
 
-
         // User's monthly salary is less or equal to 500 
         if (monthSalaryToInt <= 500 && 0 < monthSalaryToInt) {
 
@@ -139,8 +138,7 @@
             const medNetIncome = monthSalaryToInt - medTax;
 
             // Alert box (Medium income)
-            alert("Gross Salary = " + monthSalaryToInt + ", Bracket = Medium, Net Income = " + medNetIncome
-            );
+            alert("Gross Salary = " + monthSalaryToInt + ", Bracket = Medium, Net Income = " + medNetIncome);
         }
 
         // User's monthly salary is more than 700
@@ -157,11 +155,11 @@
             // Calculating net income (High)
             const highNetIncome = monthSalaryToInt - highTax15ToDec - highTax25ToDec;
 
-
             // Alert box (High income)
             alert("Gross Salary = " + monthSalaryToInt + ", Bracket = High, Net Income = " + highNetIncome);
         }
 
+        // User enters a negative value or a non-number
         else {
             alert("Please try again");
         }
@@ -189,15 +187,18 @@
         // 2.) Person's Details
         // ===================
 
+        // Prompt stores user's full name
+        const nameEntry = prompt("Please type in your first and last name");    
 
-        const nameEntry = prompt("Please type in your first and last name");    // Prompt stores user's full name
+        // Storing first letter as uppercase
+        const upperCaseName = nameEntry.toUpperCase();     
 
-        const upperCaseName = nameEntry.toUpperCase();                          // Storing first letter as uppercase 
-        const nameLength = (nameEntry.length) - 1;                              // Storing the full name's letter count 
+        // Storing the full name's letter count                     
+        const nameLength = (nameEntry.length) - 1;                              
 
-
-        const lastLetter = nameEntry.charAt(nameEntry.length - 1);      // Storing last letter
-        const lowerLastLetter = lastLetter.toLowerCase();               // Storing last letter as lowercase 
+        // Storing last letter as lowercase 
+        const lastLetter = nameEntry.charAt(nameEntry.length - 1);      
+        const lowerLastLetter = lastLetter.toLowerCase();               
 
         // First letter is a vowel
         if (upperCaseName.charAt(0) === "A" ||
