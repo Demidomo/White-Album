@@ -80,7 +80,7 @@
             <li>If the user earns more than 500 dollars but less than or equal to 700 they are in the medium tax
                 bracket. Tax taken here should be 15% of any sum that is over 500.</li>
             <li>If the user earns more than 700 dollars they are in the high tax bracket.
-                Tax taken here should be 15% of the sum that is over 500 but less than or equal to 700 
+                Tax taken here should be 15% of the sum that is over 500 but less than or equal to 700
                 and 25% of everything over 700.</li>
         </ul>
         The final result should show in a single alert the user's gross income, the tax bracket (low, medium or high),
@@ -96,12 +96,13 @@
         // 1.) Complicated Tax Calculator
         // ====================
 
+        // Storing user's monthly salary as an int 
         const monthSalary = prompt("Please enter your monthly gross income: ");
         const monthSalaryToInt = parseInt(monthSalary);
 
 
         // User's monthly salary is less or equal to 500 
-        if (monthSalaryToInt <= 500) {
+        if (monthSalaryToInt <= 500 && 0 < monthSalaryToInt) {
 
             // Prompt collects if user has children
             const kidCount = prompt("How many children do you have?")
@@ -116,14 +117,16 @@
                 const childBenefit = kidCountToInt * 10;
                 const lowNetIncome = monthSalaryToInt + childBenefit;
 
+                // Alert box (Low income with kid(s))
                 alert("Gross Salary = " + monthSalaryToInt + ", Number of Kids = " + kidCountToInt + ", Bracket = Low, Net Income = " + lowNetIncome);
             }
 
             // User has no children or does not type in a number
-            else  {
-                alert("Gross Salary = " + monthSalaryToInt + ", Number of Kids = 0, Bracket = Low, Net Income = " + monthSalaryToInt); 
-            }
+            else {
 
+                // Alert box (Low income no kid)
+                alert("Gross Salary = " + monthSalaryToInt + ", Number of Kids = 0, Bracket = Low, Net Income = " + monthSalaryToInt);
+            }
         }
 
         // User's monthly salary is more than 500 dollars but less than or equal to 700 
@@ -134,28 +137,28 @@
 
             // Calculating net income (Medium) 
             const medNetIncome = monthSalaryToInt - medTax;
-            
+
+            // Alert box (Medium income)
             alert("Gross Salary = " + monthSalaryToInt + ", Bracket = Medium, Net Income = " + medNetIncome
             );
         }
 
-
         // User's monthly salary is more than 700
-        else if ( 701 <= monthSalaryToInt ) {
-        
+        else if (701 <= monthSalaryToInt) {
+
             // 15% tax applied to amount over 500 but less than or equal to 700 
-            const highTax15 = (700-501)*0.15;
+            const highTax15 = (700 - 501) * 0.15;
             const highTax15ToDec = highTax15.toFixed(2);
-            
+
             // 25% tax applied to amount over 700
             const highTax25 = (monthSalaryToInt - 700) * 0.25;
             const highTax25ToDec = highTax25.toFixed(2);
 
             // Calculating net income (High)
             const highNetIncome = monthSalaryToInt - highTax15ToDec - highTax25ToDec;
-            
 
 
+            // Alert box (High income)
             alert("Gross Salary = " + monthSalaryToInt + ", Bracket = High, Net Income = " + highNetIncome);
         }
 
@@ -163,7 +166,7 @@
             alert("Please try again");
         }
 
-        
+
     </script>
 
     <li><em>Person's Details</em>
@@ -182,39 +185,39 @@
     </li>
 
     <script>
-                // =================== 
-                // 2.) Person's Details
-                // ===================
+        // =================== 
+        // 2.) Person's Details
+        // ===================
 
 
-                const nameEntry = prompt("Please type in your first and last name");    // Prompt stores user's full name
+        const nameEntry = prompt("Please type in your first and last name");    // Prompt stores user's full name
 
-                const upperCaseName = nameEntry.toUpperCase();                          // Storing first letter as uppercase 
-                const nameLength = (nameEntry.length) - 1;                              // Storing the full name's letter count 
+        const upperCaseName = nameEntry.toUpperCase();                          // Storing first letter as uppercase 
+        const nameLength = (nameEntry.length) - 1;                              // Storing the full name's letter count 
 
-                
-                const lastLetter = nameEntry.charAt(nameEntry.length - 1);      // Storing last letter
-                const lowerLastLetter = lastLetter.toLowerCase();               // Storing last letter as lowercase 
 
-                // First letter is a vowel
-                if (upperCaseName.charAt(0) === "A" ||
-                upperCaseName.charAt(0) === "E" ||
-                upperCaseName.charAt(0) === "I" ||
-                upperCaseName.charAt(0) === "O" ||
-                upperCaseName.charAt(0) === "U") {
-                    alert("Hello " + nameEntry + "." + "\n" +
-                    "Your name is " + nameLength + " letters long." + "\n" +
-                    "Your name begins with a vowel which is the letter" + upperCaseName.charAt(0) + "\n" +
-                    "The last letter of your name is " + lowerLastLetter + ".");
-                }
+        const lastLetter = nameEntry.charAt(nameEntry.length - 1);      // Storing last letter
+        const lowerLastLetter = lastLetter.toLowerCase();               // Storing last letter as lowercase 
 
-                // First letter is a consonant
-                else {
-                    alert("Hello " + nameEntry + "." + "\n" +
-                    "Your name is " + nameLength + " letters long." + "\n" +
-                    "Your name begins with a consonant which is the letter " + upperCaseName.charAt(0) + "\n" + 
-                    "The last letter of your name is " + lowerLastLetter + ".");
-                }
+        // First letter is a vowel
+        if (upperCaseName.charAt(0) === "A" ||
+            upperCaseName.charAt(0) === "E" ||
+            upperCaseName.charAt(0) === "I" ||
+            upperCaseName.charAt(0) === "O" ||
+            upperCaseName.charAt(0) === "U") {
+            alert("Hello " + nameEntry + "." + "\n" +
+                "Your name is " + nameLength + " letters long." + "\n" +
+                "Your name begins with a vowel which is the letter" + upperCaseName.charAt(0) + "\n" +
+                "The last letter of your name is " + lowerLastLetter + ".");
+        }
+
+        // First letter is a consonant
+        else {
+            alert("Hello " + nameEntry + "." + "\n" +
+                "Your name is " + nameLength + " letters long." + "\n" +
+                "Your name begins with a consonant which is the letter " + upperCaseName.charAt(0) + "\n" +
+                "The last letter of your name is " + lowerLastLetter + ".");
+        }
 
 
 
