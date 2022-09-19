@@ -103,15 +103,21 @@
         // User's monthly salary is less or equal to 500 
         if (monthSalaryToInt <= 500) {
 
+            // Prompt collects if user has children
             const kidCount = prompt("How many children do you have?")
+
+            // Convert the string from prompt to an int value
             const kidCountToInt = parseInt(kidCount);
 
+            // User has no children 
             if (kidCountToInt === 0) {
                 alert("Gross Salary = " + monthSalaryToInt + ", Number of Kids = 0, Bracket = Low, Net Income = " + monthSalaryToInt); 
             }
 
+            // User has children 
             else if (kidCountToInt > 0) {
 
+                // Child benefit applies $10 per chlid. 
                 const childBenefit = kidCountToInt * 10;
                 const lowNetIncome = monthSalaryToInt + childBenefit;
 
@@ -121,7 +127,11 @@
 
         // User's monthly salary is more than 500 dollars but less than or equal to 700 
         else if (500 < monthSalaryToInt && monthSalaryToInt <= 700) {
-            const medTax = (monthSalaryToInt - 501) * 0.15;
+
+            // 15% tax applied to amount over 500 
+            const medTax = (monthSalaryToInt - 500) * 0.15;
+
+            // Calculating net income (Medium) 
             const medNetIncome = monthSalaryToInt - medTax;
             const medNetIncomeNoDecimal = medNetIncome.toFixed(0);
 
@@ -174,13 +184,16 @@
                 // ===================
 
 
-                const nameEntry = prompt("Please type in your first and last name");
-                const upperCaseName = nameEntry.toUpperCase();
-                const nameLength = (nameEntry.length) - 1;
+                const nameEntry = prompt("Please type in your first and last name");    // Prompt stores user's full name
 
-                const lastLetter = nameEntry.charAt(nameEntry.length - 1);
-                const lowerLastLetter = lastLetter.toLowerCase();
+                const upperCaseName = nameEntry.toUpperCase();                          // Storing first letter as uppercase 
+                const nameLength = (nameEntry.length) - 1;                              // Storing the full name's letter count 
 
+                
+                const lastLetter = nameEntry.charAt(nameEntry.length - 1);      // Storing last letter
+                const lowerLastLetter = lastLetter.toLowerCase();               // Storing last letter as lowercase 
+
+                // First letter is a vowel
                 if (upperCaseName.charAt(0) === "A" ||
                 upperCaseName.charAt(0) === "E" ||
                 upperCaseName.charAt(0) === "I" ||
@@ -192,6 +205,7 @@
                     "The last letter of your name is " + lowerLastLetter + ".");
                 }
 
+                // First letter is a consonant
                 else {
                     alert("Hello " + nameEntry + "." + "\n" +
                     "Your name is " + nameLength + " letters long." + "\n" +
