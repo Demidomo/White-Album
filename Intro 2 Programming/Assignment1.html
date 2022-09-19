@@ -109,13 +109,8 @@
             // Convert the string from prompt to an int value
             const kidCountToInt = parseInt(kidCount);
 
-            // User has no children 
-            if (kidCountToInt === 0) {
-                alert("Gross Salary = " + monthSalaryToInt + ", Number of Kids = 0, Bracket = Low, Net Income = " + monthSalaryToInt); 
-            }
-
             // User has children 
-            else if (kidCountToInt > 0) {
+            if (kidCountToInt > 0) {
 
                 // Child benefit applies $10 per chlid. 
                 const childBenefit = kidCountToInt * 10;
@@ -123,6 +118,12 @@
 
                 alert("Gross Salary = " + monthSalaryToInt + ", Number of Kids = " + kidCountToInt + ", Bracket = Low, Net Income = " + lowNetIncome);
             }
+
+            // User has no children or does not type in a number
+            else  {
+                alert("Gross Salary = " + monthSalaryToInt + ", Number of Kids = 0, Bracket = Low, Net Income = " + monthSalaryToInt); 
+            }
+
         }
 
         // User's monthly salary is more than 500 dollars but less than or equal to 700 
