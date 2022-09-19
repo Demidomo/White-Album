@@ -143,18 +143,20 @@
         // User's monthly salary is more than 700
         else if ( 701 <= monthSalaryToInt ) {
         
+            // 15% tax applied to amount over 500 but less than or equal to 700 
             const highTax15 = (700-501)*0.15;
             const highTax15ToDec = highTax15.toFixed(2);
             
+            // 25% tax applied to amount over 700
             const highTax25 = (monthSalaryToInt - 700) * 0.25;
             const highTax25ToDec = highTax25.toFixed(2);
 
-
+            // Calculating net income (High)
             const highNetIncome = monthSalaryToInt - highTax15ToDec - highTax25ToDec;
-            const highNetIncomeToDec = highNetIncome.toFixed(2);
+            
 
 
-            alert("Gross Salary = " + monthSalaryToInt + ", Bracket = High, Net Income = " + highNetIncomeToDec);
+            alert("Gross Salary = " + monthSalaryToInt + ", Bracket = High, Net Income = " + highNetIncome);
         }
 
         else {
