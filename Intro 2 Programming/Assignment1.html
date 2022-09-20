@@ -96,72 +96,63 @@
         // 1.) Complicated Tax Calculator
         // ====================
 
-        // Storing user's monthly salary as an int 
+        // Storing user's monthly salary as a number 
         const monthSalary = prompt("Please enter your monthly gross income: ");
-        const monthSalaryToInt = parseInt(monthSalary);
+        const monthSalaryToFloat = parseFloat(monthSalary);
 
         // User's monthly salary is less or equal to 500 
-        if (monthSalaryToInt <= 500 && 0 < monthSalaryToInt) {
+        if (monthSalaryToFloat <= 500 && 0 < monthSalaryToFloat) {
 
-            // Prompt collects if user has children
-            const kidCount = prompt("How many children do you have?")
-
-            // Convert the string from prompt to an int value
+            // If user has children and stores input as a number
+            const kidCount = prompt("How many children do you have?")    
             const kidCountToInt = parseInt(kidCount);
 
             // User has children 
             if (kidCountToInt > 0) {
+                 
+                // Calculating child benefit and low bracket net income 
+                const childBenefit = kidCountToInt * 10;                
+                const lowNetIncome = monthSalaryToFloat + childBenefit;
 
-                // Child benefit applies $10 per chlid. 
-                const childBenefit = kidCountToInt * 10;
-                const lowNetIncome = monthSalaryToInt + childBenefit;
-
-                // Alert box (Low income with kid(s))
-                alert("Gross Salary = " + monthSalaryToInt + ", Number of Kids = " + kidCountToInt + ", Bracket = Low, Net Income = " + lowNetIncome);
+                alert("Gross Salary = " + monthSalaryToFloat + ", Number of Kids = " + kidCountToInt + ", Bracket = Low, Net Income = " + lowNetIncome);
             }
 
             // User has no children or does not type in a number
             else {
-
-                // Alert box (Low income no kid)
-                alert("Gross Salary = " + monthSalaryToInt + ", Number of Kids = 0, Bracket = Low, Net Income = " + monthSalaryToInt);
+                alert("Gross Salary = " + monthSalaryToFloat + ", Number of Kids = 0, Bracket = Low, Net Income = " + monthSalaryToFloat);
             }
         }
 
         // User's monthly salary is more than 500 dollars but less than or equal to 700 
-        else if (500 < monthSalaryToInt && monthSalaryToInt <= 700) {
+        else if (500 < monthSalaryToFloat && monthSalaryToFloat <= 700) {
 
-            // 15% tax applied to amount over 500 
-            const medTax = (monthSalaryToInt - 500) * 0.15;
+            // Calculating medium bracket tax and net income 
+            const medTax = (monthSalaryToFloat - 500) * 0.15;             
+            const medNetIncome = monthSalaryToFloat - medTax;             
 
-            // Calculating net income (Medium) 
-            const medNetIncome = monthSalaryToInt - medTax;
-
-            // Alert box (Medium income)
-            alert("Gross Salary = " + monthSalaryToInt + ", Bracket = Medium, Net Income = " + medNetIncome);
+            alert("Gross Salary = " + monthSalaryToFloat + ", Bracket = Medium, Net Income = " + medNetIncome);
         }
 
         // User's monthly salary is more than 700
-        else if (701 <= monthSalaryToInt) {
+        else if (701 <= monthSalaryToFloat) {
 
-            // 15% tax applied to amount over 500 but less than or equal to 700 
-            const highTax15 = (700 - 501) * 0.15;
+            // 15% tax rate
+            const highTax15 = (700 - 501) * 0.15;                       
             const highTax15ToDec = highTax15.toFixed(2);
-
-            // 25% tax applied to amount over 700
-            const highTax25 = (monthSalaryToInt - 700) * 0.25;
+            
+            // 25% tax rate 
+            const highTax25 = (monthSalaryToFloat - 700) * 0.25;          
             const highTax25ToDec = highTax25.toFixed(2);
+ 
+            // Calculating high bracket net income 
+            const highNetIncome = monthSalaryToFloat - highTax15ToDec - highTax25ToDec;
 
-            // Calculating net income (High)
-            const highNetIncome = monthSalaryToInt - highTax15ToDec - highTax25ToDec;
-
-            // Alert box (High income)
-            alert("Gross Salary = " + monthSalaryToInt + ", Bracket = High, Net Income = " + highNetIncome);
+            alert("Gross Salary = " + monthSalaryToFloat + ", Bracket = High, Net Income = " + highNetIncome);
         }
 
-        // User enters a negative value or a non-number
+        // User enters a non-number
         else {
-            alert("Please try again");
+            alert("Not a number. Please try again with a valid number");
         }
 
 
@@ -208,7 +199,7 @@
             upperCaseName.charAt(0) === "U") {
             alert("Hello " + nameEntry + "." + "\n" +
                 "Your name is " + nameLength + " letters long." + "\n" +
-                "Your name begins with a vowel which is the letter" + upperCaseName.charAt(0) + "\n" +
+                "Your name begins with a vowel which is the letter " + upperCaseName.charAt(0) + "." + "\n" +
                 "The last letter of your name is " + lowerLastLetter + ".");
         }
 
