@@ -97,11 +97,11 @@
         // ====================
 
         // Storing user's monthly salary as a number 
-        const monthSalary = prompt("Please enter your monthly gross income: ");
-        const monthSalaryToFloat = parseFloat(monthSalary);
+        const salary = prompt("Please enter your monthly gross income: ");
+        const salaryToFloat = parseFloat(salary);
 
         // User's monthly salary is less or equal to 500 
-        if (monthSalaryToFloat <= 500 && 0 < monthSalaryToFloat) {
+        if (salaryToFloat <= 500 && 0 < salaryToFloat) {
 
             // If user has children and stores input as a number
             const kidCount = prompt("How many children do you have?")    
@@ -112,46 +112,46 @@
                  
                 // Calculating child benefit and low bracket net income 
                 const childBenefit = kidCountToInt * 10;                
-                const lowNetIncome = monthSalaryToFloat + childBenefit;
+                const lowNetIncome = salaryToFloat + childBenefit;
 
-                alert("Gross Salary = " + monthSalaryToFloat + ", Number of Kids = " + kidCountToInt + ", Bracket = Low, Net Income = " + lowNetIncome);
+                alert(`Gross Salary = ${salaryToFloat}, Number of Kids = ${kidCountToInt}, Bracket = Low, Net Income = ${lowNetIncome}`);
             }
 
             // User has no children or does not type in a number
             else {
-                alert("Gross Salary = " + monthSalaryToFloat + ", Number of Kids = 0, Bracket = Low, Net Income = " + monthSalaryToFloat);
+                alert(`Gross Salary = ${salaryToFloat}, Number of Kids = 0, Bracket = Low, Net Income = ${salaryToFloat}`);
             }
         }
 
         // User's monthly salary is more than 500 dollars but less than or equal to 700 
-        else if (500 < monthSalaryToFloat && monthSalaryToFloat <= 700) {
+        else if (500 < salaryToFloat && salaryToFloat <= 700) {
 
             // Calculating medium bracket tax and net income 
-            const medTax = (monthSalaryToFloat - 500) * 0.15;             
-            const medNetIncome = monthSalaryToFloat - medTax;             
+            const medTax = (salaryToFloat - 500) * 0.15;             
+            const medNetIncome = salaryToFloat - medTax;             
 
-            alert("Gross Salary = " + monthSalaryToFloat + ", Bracket = Medium, Net Income = " + medNetIncome);
+            alert(`Gross Salary = ${salaryToFloat}, Bracket = Medium, Net Income = ${medNetIncome}`);
         }
 
         // User's monthly salary is more than 700
-        else if (701 <= monthSalaryToFloat) {
+        else if (701 <= salaryToFloat) {
 
             // 15% tax rate
             const highTax15 = (700 - 501) * 0.15;                       
             const highTax15ToDec = highTax15.toFixed(2);
             
             // 25% tax rate 
-            const highTax25 = (monthSalaryToFloat - 700) * 0.25;          
+            const highTax25 = (salaryToFloat - 700) * 0.25;          
             const highTax25ToDec = highTax25.toFixed(2);
  
             // Calculating high bracket net income 
-            const highNetIncome = monthSalaryToFloat - highTax15ToDec - highTax25ToDec;
+            const highNetIncome = salaryToFloat - highTax15ToDec - highTax25ToDec;
 
-            alert("Gross Salary = " + monthSalaryToFloat + ", Bracket = High, Net Income = " + highNetIncome);
+            alert(`Gross Salary = ${salaryToFloat}, Bracket = High, Net Income = ${highNetIncome}`);
         }
 
         // User enters a non-number
-        else {
+        else if (isNaN(salaryToFloat)){
             alert("Not a number. Please try again with a valid number");
         }
 
@@ -179,36 +179,37 @@
         // ===================
 
         // Prompt stores user's full name
-        const nameEntry = prompt("Please type in your first and last name");    
+        const nameEntry = prompt(`Please type in your first and last name`);    
 
         // Storing first letter as uppercase
-        const upperCaseName = nameEntry.toUpperCase();     
+        const nameUpperCase = nameEntry.toUpperCase();  
+        const firstLetterUpperCase = nameUpperCase.charAt(0);   
 
         // Storing the full name's letter count                     
         const nameLength = (nameEntry.length) - 1;                              
 
         // Storing last letter as lowercase 
         const lastLetter = nameEntry.charAt(nameEntry.length - 1);      
-        const lowerLastLetter = lastLetter.toLowerCase();               
+        const lastLetterLowerCase = lastLetter.toLowerCase();               
 
         // First letter is a vowel
-        if (upperCaseName.charAt(0) === "A" ||
-            upperCaseName.charAt(0) === "E" ||
-            upperCaseName.charAt(0) === "I" ||
-            upperCaseName.charAt(0) === "O" ||
-            upperCaseName.charAt(0) === "U") {
-            alert("Hello " + nameEntry + "." + "\n" +
-                "Your name is " + nameLength + " letters long." + "\n" +
-                "Your name begins with a vowel which is the letter " + upperCaseName.charAt(0) + "." + "\n" +
-                "The last letter of your name is " + lowerLastLetter + ".");
+        if (firstLetterUpperCase === "A" ||
+            firstLetterUpperCase === "E" ||
+            firstLetterUpperCase === "I" ||
+            firstLetterUpperCase === "O" ||
+            firstLetterUpperCase === "U") {
+            alert(`Hello ${nameEntry}.\n`+
+                `Your name is ${nameLength} letters long.\n` +
+                `Your name begins with a vowel which is the letter ${firstLetterUpperCase}.\n` +
+                `The last letter of your name is ${lastLetterLowerCase}.`);
         }
 
         // First letter is a consonant
         else {
-            alert("Hello " + nameEntry + "." + "\n" +
-                "Your name is " + nameLength + " letters long." + "\n" +
-                "Your name begins with a consonant which is the letter " + upperCaseName.charAt(0) + "\n" +
-                "The last letter of your name is " + lowerLastLetter + ".");
+            alert(`Hello ${nameEntry}.\n` +
+                `Your name is ${nameLength} letters long.\n` +
+                `Your name begins with a consonant which is the letter ${firstLetterUpperCase}.\n` +
+                `The last letter of your name is ${lastLetterLowerCase}.`);
         }
 
 
