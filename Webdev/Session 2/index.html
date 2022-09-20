@@ -1,81 +1,48 @@
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="assets/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-
+    <title>Muochu Hu Assignment(Week 2)</title>
+    <!-- External link for font -->
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <!-- Linking css file from asset folder -->
+    <link rel="stylesheet" href="asset/style.css">
 </head>
-
 <body>
-
-
     <form>
-        <img width="100" src="assets/logo.jpg">
-        <h1>Sign up</h1>
-        <h5>It's free and only takes a minute</h5>
-        <div class="input-container">
-            <label>First Name</label>
-            
-        </div>
+        <!-- Linking form logo -->
+        <img width="100" src="asset/logo.jpg">
 
-        <div> 
+        <h1>Sign up</h1>
+        <h5>It's free and only takes minutes</h5>    
+
+        <div><label>First Name</label></div>
+        <div class="input-container">
             <input type="text" placeholder="Write your first name here">
         </div>
-
+        <div><label>Last Name</label></div>
         <div class="input-container">
-            <label>Last Name</label>
-           
-        </div>
-
-        <div>
             <input type="text" placeholder="Write your last name here">
         </div>
-
+        <div><label>Email</label></div>
         <div class="input-container">
-            <label>Email</label>
-            
-        </div>
-
-        <div> 
             <input type="text" placeholder="Write your email here">
         </div>
-
+        <div><label>Password</label></div>
         <div class="input-container">
-            <label>Password</label>
-            
-        </div>
-
-        <div> 
             <input type="password" placeholder="Write your password here">
         </div>
-
+        <div><label>Confirm Password</label></div>
         <div class="input-container">
-            <label>Confirm Password</label>
-           
-        </div>
-
-        <div>
             <input type="password" placeholder="Write your password again">
         </div>
-
         <div class="input-container">
-            <button id="signup-button">Sign Up</button>
+            <button id="signup-button">Sign up</button>
         </div>
-
-
-        <span>By Clicking the signup button, you agree to our <a href="#">Terms & Conditions</a> and <a href="#">Private
-                Policy</a> </span>
+        <span>By clicking the signup button, you agree to our <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></span>
     </form>
 
-    <p id="paragraph-footer">
-        Already have an account? <a href="#">Login here</a>
-    </p>
-
-
+    <p id="paragraph-footer">Already have an account? <a id="login-account" href="#">Login here</a></p>
 </body>
-
 </html>
