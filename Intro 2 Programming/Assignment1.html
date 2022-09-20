@@ -104,15 +104,13 @@
         if (salaryToFloat <= 500 && 0 < salaryToFloat) {
 
             // If user has children and stores input as a number
-            const kidCount = prompt("How many children do you have?")    
-            const kidCountToInt = parseInt(kidCount);
+            const kidCountToInt = parseInt(prompt("How many children do you have?"));
 
             // User has children 
             if (kidCountToInt > 0) {
                  
                 // Calculating child benefit and low bracket net income 
-                const childBenefit = kidCountToInt * 10;                
-                const lowNetIncome = salaryToFloat + childBenefit;
+                const lowNetIncome= (kidCountToInt * 10) + salaryToFloat;
 
                 alert(`Gross Salary = ${salaryToFloat}, Number of Kids = ${kidCountToInt}, Bracket = Low, Net Income = ${lowNetIncome}`);
             }
@@ -137,22 +135,20 @@
         else if (701 <= salaryToFloat) {
 
             // 15% tax rate
-            const highTax15 = (700 - 501) * 0.15;                       
-            const highTax15ToDec = highTax15.toFixed(2);
-            
+            const highTax15 = ((700 - 501) * 0.15).toFixed(2);                       
+             
             // 25% tax rate 
-            const highTax25 = (salaryToFloat - 700) * 0.25;          
-            const highTax25ToDec = highTax25.toFixed(2);
+            const highTax25 = ((salaryToFloat - 700) * 0.25).toFixed(2);          
  
             // Calculating high bracket net income 
-            const highNetIncome = salaryToFloat - highTax15ToDec - highTax25ToDec;
+            const highNetIncome = salaryToFloat - highTax15 - highTax25;
 
             alert(`Gross Salary = ${salaryToFloat}, Bracket = High, Net Income = ${highNetIncome}`);
         }
 
         // User enters a non-number
         else if (isNaN(salaryToFloat)){
-            alert("Not a number. Please try again with a valid number");
+            alert("Not a number. Please try again with a valid number.");
         }
 
 
@@ -182,8 +178,7 @@
         const nameEntry = prompt(`Please type in your first and last name`);    
 
         // Storing first letter as uppercase
-        const nameUpperCase = nameEntry.toUpperCase();  
-        const firstLetterUpperCase = nameUpperCase.charAt(0);   
+        const firstLetterUpperCase = (nameEntry.charAt(0)).toUpperCase();   
 
         // Storing the full name's letter count                     
         const nameLength = (nameEntry.length) - 1;                              
@@ -192,7 +187,7 @@
         const lastLetter = nameEntry.charAt(nameEntry.length - 1);      
         const lastLetterLowerCase = lastLetter.toLowerCase();               
 
-        // First letter is a vowel
+        // When the first letter is a vowel
         if (firstLetterUpperCase === "A" ||
             firstLetterUpperCase === "E" ||
             firstLetterUpperCase === "I" ||
@@ -204,7 +199,7 @@
                 `The last letter of your name is ${lastLetterLowerCase}.`);
         }
 
-        // First letter is a consonant
+        // When the first letter is a consonant
         else {
             alert(`Hello ${nameEntry}.\n` +
                 `Your name is ${nameLength} letters long.\n` +
