@@ -1,0 +1,89 @@
+body {
+    background-color: rgb(53, 75, 115);
+    margin: 0px;
+    font-family: 'Monserrat', sans-serif;
+    /* Brings all the elements to the center */
+    text-align: center;
+}
+
+form {
+    background-color:rgb(255, 255, 255);
+    margin: auto;
+    padding: 30px;
+    width: 300px;
+    margin-top: 20px;
+}
+
+h1, h5 {
+    margin: 10px;
+}
+
+label {
+    color:rgb(27, 48, 82);
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+div {
+    margin: 20px 0px;
+}
+
+.input-container {
+    margin: 20px 0px;
+}
+
+#paragraph-footer {
+    color: rgb(90, 85, 85);
+    margin-top: 20px;
+}
+
+#login-account {
+    color: rgb(101, 204, 101);
+}
+
+#signup-button {
+    background-color: rgb(80, 193, 162);
+    padding: 10px 0px;
+    border: 2px solid rgb(255, 238, 238);
+    color: white;
+    width: 100%;
+    border-radius: 5px;
+}
+
+input, select {
+    border: 1px solid rgb(212, 212, 212);
+    padding: 10px 4px;
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 4px;
+}
+
+.input-container1 {
+    margin-top: 0px;
+    text-align: left;
+}
+
+
+
+.text-center {
+    text-align: center;
+}
+
+/* you can target children element by giving it proper path */
+select option {
+    padding: 10px 4px;
+    background-color: rgb(192, 118, 20);
+}
+
+.border-aqua {
+    border: 3px solid aqua;
+}
+
+.bg white { 
+    background-color: white; 
+}
+
+
+.img-opacity {
+    opacity: 0.1; 
+}
