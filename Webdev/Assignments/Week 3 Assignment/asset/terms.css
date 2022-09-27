@@ -1,0 +1,29 @@
+div.scroll {
+    /* margin: 4px, 4px; */
+    padding:4px;
+    background-color: rgb(249, 255, 249);
+    width: 600px;
+    height: 280px;
+    border: 2px solid rgb(183, 224, 182);
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align:justify;
+}
+
+body {
+    background-color: rgb(166, 197, 166);
+    margin: 0px;
+    
+    font-family: 'Monserrat', sans-serif;
+    /* Brings all the elements to the center */
+    text-align: center;
+}
+
+form {
+    background-color:rgb(255, 255, 255);
+    margin: auto;
+    padding: 30px;
+    width: 600px;
+    height: 400px;
+    margin-top: 20px;
+}
