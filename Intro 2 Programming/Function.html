@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript Functions 1</title>
+        <style>
+            body {
+                font-family: helvetica;
+            }
+            em { font-weight:bold; font-style:normal; 
+                text-decoration:underline; font-size:1.2em; 
+            }
+            h1 {
+                text-align:center;
+            }
+            ol {
+                list-style: none;
+                counter-reset: item;
+                width: 700px; 
+                position: relative; 
+                left: 50%; 
+                margin-left: -350px;
+            }
+            ol > li {
+                counter-increment: item;
+                margin-bottom: 20px;
+            }
+            ol > li:before {
+                margin-right: 10px;
+                content: counter(item);
+                background: crimson;
+                border-radius: 100%;
+                color: white;
+                width: 1.3em;
+                text-align: center;
+                display: inline-block;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <h1>JavaScript Functions 1</h1>
+        <script>
+            function sayHello() {
+                console.log("Hello");
+            }
+
+            sayHello(); 
+        </script>
+
+        <ol>
+            <li><em>Fix Broken Function</em>
+            <br/>
+            In the below code a function is written and called incorrectly. Fixed the code so that it runs correctly. The code is supposed to create a function that creates a variable called fruit and then console logs a sentence stating "I ate a berry."
+            </li>
+            <script>
+                console.log('%c Question 1.', 'color: lime; background: black');
+                function eatFruit() {
+                    const fruit = 'berry';
+                    console.log(`I ate a ${fruit}.`);
+                }
+
+                eatFruit();
+            </script>
+
+
+            <li><em>Call a Function</em>
+            <br/>
+            A function is written below that multiplies 4 and 2 and then console logs a sentence stating the result. Call/invoke this function and see the console log.
+            </li>
+            <script>
+                console.log('%c Question 2.', 'color: lime; background: black');
+                
+                function callThisFunction() {
+                    const result = 4 * 2;
+                    console.log(`4 multiplied by 2 is ${result}`);
+                }
+
+                callThisFunction(); 
+            </script>
+
+
+            <li><em>Hello World</em>
+            <br/>
+            Create a simple function that console.logs "Hello World". Without using a loop, invoke/call this function 3 times.
+            </li>
+            <script>
+                console.log('%c Question 3.', 'color: lime; background: black');
+
+                function helloWorld() {
+                    console.log("Hello World");
+                }
+
+                helloWorld();
+                helloWorld();
+                helloWorld();
+                
+            </script>
+
+
+            <li><em>Goodnight World</em>
+            <br/>
+            Create a simple function that console.logs "Goodnight World". This time use a for loop to <em>call</em> the function ten times. Do not put the loop inside the function. Call the funtion inside the loop.
+            </li>
+            <script>
+                console.log('%c Question 4.', 'color: lime; background: black');
+
+                function goodNightWorld() {
+                    console.log("Goodnight World");
+                }
+                for (let i = 0; i < 10; i ++) {
+                    goodNightWorld();
+       
+                }
+
+
+                
+            </script>
+
+
+            <li><em>Name and Address</em>
+            <br/>
+            Create 2 functions:<br>- one that creates a console.log saying "My name is ..." and the other<br>- a console.log that says "I live in ...".<br>
+            Replace the ... with real values. Call both of these functions with the name function happening first.
+            </li>
+            <script>
+                console.log('%c Question 5.', 'color: lime; background: black');
+
+                function myNameIs() {
+                    console.log("My name is Matthew");
+                }
+
+                function liveIn() {
+                    console.log("I live in Vancouver");
+                }
+
+                myNameIs();
+                liveIn();
+                
+            </script>
+
+
+            <li><em>Name and Address Called Differently</em>
+            <br/>
+            Do the same again but change the function names to avoid conflicting with the function names in the previous question. This time however call the address function inside the name function and do it in such a way that the address console log comes first. Remember you can call a function inside of another function.
+            </li>
+            <script>
+                console.log('%c Question 6.', 'color: lime; background: black');
+
+                function liveIn2() {
+                    console.log("I live in Vancouver");
+                }
+
+
+                function myNameIs2() {
+                    liveIn2();
+                    console.log("My name is Matthew");
+                }
+
+                myNameIs2();
+                
+            </script>
+
+
+            <li><em>Choose Which Function to Call</em>
+            <br/>
+            Create 2 functions:<br>- one that logs "My favourite fruit is ..." and in a separate log console logs "It is grown in ...".<br>- The second function should log "My favourite music is ..." and then logs "The band ... plays this kind of music".<br><br>Then use a confirm box to only call one of these functions (Fruit or Music) based on the user's reaction e.g. ("OK = fruit, Cancel = music").
+            </li>
+            <script>
+                console.log('%c Question 7.', 'color: lime; background: black');
+                function favFruit() {
+                    console.log("My favourite fruit is mango");
+                    console.log("It is grown in Mexico");
+                }
+
+                function favMusic() {
+                    console.log("My favourite music is electronics");
+                    console.log("The band Daft Punk plays this kind of music");
+                }
+
+                const toConfirm = confirm("How ya feeling");
+
+                if (toConfirm) {
+                    favMusic();
+                }
+
+                else {
+                    favFruit();
+                }
+
+             
+
+                
+            </script>
+
+
+            <li><em>Name Analysis</em>
+            <br/>
+            Create a single function that does the following. Ask the user to type their name into a prompt. Then ask the user how old they are using a prompt. Check to see how many characters are in the name. If the name has more than 10 characters consider the name as being long. In a single console.log print the following message<br><br>
+            "Hello X how are you today?<br>
+            You have a long/short name which has X characters<br>
+            You are X years old and so were born in the year XXXX"<br><br>
+            Call this function once.
+            </li>
+            <script>
+                console.log('%c Question 8.', 'color: lime; background: black');
+
+                function questionEight() {
+
+                    const prompt1 = prompt("Type in your name");
+                    const prompt2 = parseInt(prompt("How old are you"));
+
+                    const nameLength = prompt1.length;
+                   
+
+                    if (nameLength > 10) {
+                        console.log(`Hello ${prompt1} how are you today.\nYou have a long name which has ${nameLength} characters. \nYou are ${prompt2} years old and so were born in the year`);
+                    }
+
+                    else {
+                        {
+                            console.log(`Hello X how are you today?\n You have a long name which has ${nameLength } characters. \nYou are ${ prompt2 } years old and so were born in the year`);
+                    }
+
+                    }
+
+
+                }
+
+                questionEight(); 
+            </script>
+        </ol>
+
+        <script>
+
+        </script>
+    </body>
+</html>
