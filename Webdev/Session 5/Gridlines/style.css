@@ -3,6 +3,8 @@
     gap: 20px;
     grid-template-columns: 150px minmax(300px, auto) 150px;
     grid-auto-rows: 100px;
+    justify-content: center;
+    align-content: center;
 
 }
 
