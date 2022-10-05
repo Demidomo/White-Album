@@ -1,0 +1,106 @@
+.block {
+    background-color: red;
+    width: 200px;
+    height: 200px;
+    color: white;
+    font-size: 50px;
+}
+
+.block2 {
+    background-color: green;
+    width: 200px;
+    height: 200px;
+    color: white;
+    font-size: 30px;
+    margin-top: 20px;
+
+
+    /* The time transition waited in order to start */
+    transition-delay: 1s;
+
+
+    /* Multiple Transition propeties */
+    transition-property: background, transform;
+
+
+    /* Linear fashion of transition */
+    transition-timing-function: linear;
+
+
+    /* Time take by the transition to happen */
+    transition-duration: 1s;
+}
+
+
+
+/* Transform Properties */
+.transform {
+    /* Change position of element in x & y directions */
+    /* transform: translate(100px, 200px); */
+
+
+    /* If you want to target X axis only */
+    /* transform: translateX(20px); */
+
+
+    /* We can rotate elements clockwise using transform rotate */
+    /* transform: rotate(50deg); */
+
+    
+    /* We can rotate elements anti clockwise using transform rotate */
+    /* transform: rotate(-50deg); */
+
+
+    /* Make it 2 times of its initial size */
+    /* transform: scale(2); */
+
+    /* You can also decrease its size */
+    /* transform: scale(0.5); */
+
+
+    /* We can scale it 2 times accross x axis and 3 times accross y axis */
+    /* transform: scale(2, 3); */
+
+
+    /* When we just want to target along x axis */
+    /* transform: scaleX(20); */
+
+    /* transform: skew(20deg); */
+
+    /* transform: skewY(20deg); */
+
+    /* Add Transform to see multiple properties */
+     /* transform: matrix(2, -0.3, 0, 1, 0, 0); */
+
+     /* https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotate3d */
+
+     /* transform: rotate3d(1, 1, 1, 45deg); */
+
+
+
+     /* ******************************** TRANSITIONS *********************** */
+     
+     /* This is shorthand way to right transition css */
+     /* transition: width 1s linear 1s; */
+
+
+     /* This is similar to the above shorthand way */
+     transition-delay: 1s;
+     transition-property: width;
+     transition-timing-function: linear;
+     transition-duration: 1s;
+
+}
+
+.transform:hover {
+    width: 500px;
+}
+
+
+.block2:hover {
+    background: orange;
+    transform: rotate(60deg);
+}
+
+
+/* https://cubic-bezier.com/#.17,.67,.83,.67 */
