@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Assignment 1</title>
+    <style>
+        body {
+            font-family: helvetica;
+        }
+
+        h1 {
+            color: crimson;
+        }
+
+        em {
+            font-weight: bold;
+            font-style: normal;
+            text-decoration: underline;
+            font-size: 1.2em;
+        }
+
+        li {
+            margin: 20px;
+        }
+
+        ol {
+            width: 700px;
+            position: relative;
+            left: 50%;
+            margin-left: -350px;
+        }
+
+        ol>li>ol>li {
+            margin: 10px;
+        }
+
+        p {
+            width: 700px;
+            position: relative;
+            left: 50%;
+            margin-left: -350px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        ul>li {
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Introduction to Programming Assignment 2</h1>
+
+    <p>
+        Complete the following tasks. Name your html file <span
+            style="font-size:1.05rem; color:blue;"><em>Name</em>_Assignment_2</span> and submit it before the deadline.
+        <br>
+        <em>60%</em> of the marks will go to successfully completing the tasks free of errors.
+        <br>
+        <em>20%</em> of the marks will go to how well you comment your code. This also incorporates good naming
+        conventions for variables & <strong>proper formatting/organisation of your code</strong>.
+        <br>00
+        <em>20%</em> of the marks will go to how efficient your code is using the methods you have learned up to this
+        point.
+    </p>
+
+    <ol>
+
+        <li><em>Colours of the Rainbow</em>
+            <br>
+            <ul>
+                <li>Create an array containing the seven colours of the rainbow.</li>
+                <li>Ask the user using a prompt what their favourite colour is.</li>
+                <li>Check to see if their favourite colour is in the array (casing of letters should not be relevant
+                    e.g. "Red" should equate to "red".</li>
+                <li>If their favourite colour happens to be one of the colours in the rainbow array, remove this colour
+                    from the array. In a single console.log print out the remaining colours separated by " *** " in
+                    reverse alphabetical order (Z -> A).</li>
+                <li>If their favourite colour is not in the array then print out the entire array in a single
+                    console.log separated by " xxx " in alphabetical order (A -> Z).</li>
+            </ul>
+        </li>
+
+        <script>
+            // ====================
+            // 1.) Colours of the Rainbow
+            // ====================
+
+            const rainbow = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];   // Declaring an array and storing the 7 colors of the rainbow. 
+
+            const favColor = (prompt("What is your favourite color?")).toLowerCase();           // Prompt will ask for user's favorite color, which will store it into lower casing.
+            const favColorMatch = rainbow.indexOf(favColor);                                    // indexOf method is used to find user's input in the array, and stored as a variable.
+        
+            if (favColorMatch > -1) {                                                           // If the returned value is greater than -1, this means user's answer exists in the array.                                                                                     
+                    rainbow.splice(favColorMatch, 1);                                                                                                      
+                    const sortReverseArr = rainbow.sort().reverse();                            // Using the Sort and Reverse method, the array is put in alphabetical order, then put in reverse order.
+                    console.log(sortReverseArr.join(" *** "));                                  // Prints final output with the remaining colours separated by " *** ".
+            }
+
+            else {                                                                              // If indexOf method did not pick up user's input in the rainbow array.
+                const sortArr = rainbow.sort();                                                 // The rainbow array will be placed in alphabetical order
+                console.log(sortArr.join(" *** "));                                             // The final output will show the array items separated by " *** ".
+            }
+
+        </script>
+
+        <li><em>99 Bottles of Beer on the Wall</em>
+            <br>
+            Starting from 99 and working your way down to 0, print a separate console.log for each number.
+            <ul>
+                <li>If the number is divisible by 6, print "smash" instead of the number.</li>
+                <li>If the number is divisible by 4, print "bang" instead of the number.</li>
+                <li>If the number is divisible by both 6 and 4, print "wallop".</li>
+            </ul>
+            The first ten console.logs should look like<br>
+            99 98 97 Wallop 95 94 93 Bang 91 Smash.
+            <p>You may want to look up the <em>modulous operator</em> % in JavaScript to help you figure out the
+                divisible part of the code. Saying a number is divisible by 6 means that if I divide that number by 6 I
+                should be left with 0 remainder. Such numbers include 6, 12, 18, 24 etc.</p>
+        </li>
+
+        <script>
+            // =================== 
+            // 2.) 99 Bottles of Beer on the Wall
+            // ===================
+
+
+            // From a readability perspective, I personally preferred the If/Else statement over the Switch statments
+
+            for (i = 99; i >= 0; i--) {                         // This For Loop is counting downwards starting at 99, and ending at 1. With decrements of 1 count.
+
+                    if (i == 0) {                               // Before checking other conditions, we check 0 at the start. 
+                        console.log(0);
+                    }
+                    else if ((i % 6) == 0 && (i % 4) == 0) {    // Checking if count is divisible by both 4 and 6, which will output "wallop".
+                        console.log("wallop");
+                    }
+                    else if ((i % 4) == 0) {                    // Checking if count is divisible by 4 only, which will output "smash".
+                        console.log("bang");
+                    }
+                    else if ((i % 6) == 0) {                    // Checking if count is divisible by 4 only, which will output "bang".
+                        console.log("smash");
+                    }
+                    else {                                      // For counts not divisible by 4 and/or 6, and non 0 values, here it will output the count value itself.
+                        console.log(i);
+                    }
+                }     
+           
+                
+            // I did include the Switch statements here in the case this method is more efficient, but ultimately went with the If/Else to run the output. 
+
+            // for (i = 99; i >= 0; i--) {
+            //         switch (true) {
+            //             case i == 0:
+            //                 console.log(0);
+            //                 break;
+
+            //             case i % 6 == 0 && i % 4 == 0:
+            //                 console.log("wallop");
+            //                 break;
+
+            //             case i % 6 == 0:
+            //                 console.log("smash");
+            //                 break;
+
+            //             case i % 4 == 0:
+            //                 console.log("bang");
+            //                 break;
+
+            //             default:
+            //                 console.log(i);
+            //         }
+            //     }
+
+
+
+        </script>
+
+        <li><em>Student Names</em>
+            <br>
+            The below array contains the names of each student. Do not modify the names in the array. In a <b>single
+                console.log</b> state the following:
+            <ol>
+                <li>There are X number of students in the array.</li>
+                <li>The longest name in the array is X.</li>
+                <li>There are X names that contain the letter "m" either in lower or uppercase.</li>
+                <li>The following names begin with the letter "J": X, X, X, X.</li>
+            </ol>
+            <p>Some additional information to help you complete the tasks are as follows:</p>
+            <ol>
+                <li>...</li>
+                <li>You can assume that there is only 1 longest name i.e. no joint longest names. Also hyphens - count
+                    as characters.</li>
+                <li>You should count for both lowercase "m" and uppercase "M".</li>
+                <li>You need to store the names that begin with "J" in a new array and then use this array to output the
+                    message. Check for both lowercase "j" and uppercase "J" in the first letter position.</li>
+            </ol>
+        </li>
+
+        <script>
+            // =================== 
+            // 3.) Student Names
+            // ===================
+            const students = ["Jean", "Tsz", "Raghav", "Michael", "Jacob", "James", "Bashdar", "Manjot", "Amanpreet", "Tsung-Chih", "Che", "Chun", "Betlehem", "David", "Huu", "Jordan", "Karanveer", "Jinsoo", "Harinderpal", "Jericho", "Gian"];
+
+            let finalOutput = "";                               // Declaring an empty string, which will store all output messages in one variable. 
+            let longestName = "";                               // Declaring an empty string, which will store the longest name in the array. 
+            let comparedName = 0;                               // Declaring a control variable, its amount will be compared to each array item during each loop iteration.
+            let mCount = 0;                                     // Declaring a variable, which will store the count for names containing 'm'.
+            let jNames = [];                                    // Declaring an empty array, which will store all names that start with 'J'.
+            const studentCount = students.length;               // Stores the array size to show how many items are in the array. 
+
+
+            finalOutput += `There are ${studentCount} number of students in the array. \n`;                             // Appending student count message to the final output. 
+
+
+            for (let name of students) {                        // Looping through the students array to find longest name. 
+                if (name.length > comparedName) {               // If the comparing name is greater than the control variable.
+                    comparedName = name.length;                 // The size of the longer comparing name is stored as the control variable.
+                    longestName = name;                         // Until a longer name comes up, it will be stored as the longest name. 
+                }
+            }
+            
+            finalOutput += `The longest name in the array is ${longestName}. \n`;                                       // Appending longest name message to the final output. 
+
+
+            for (let m of students) {                           // Looping through the students array to find any names containing the letter 'm'. 
+                if (m.toLowerCase().includes('m')) {            // .includes() method is used, and all names are set to lower casing to consider both casings present. 
+                    mCount++;                                   // The previously declared variable will increment by 1 for every name comtaining the letter m. 
+                }
+            }
+            
+            finalOutput += `There are ${mCount} names that contain the letter "m" either in lower or uppercase. \n`     // Appending names with 'm' message to the final output. 
+
+
+            for (let j of students) {                           // Looping through the students array to find names that start with 'J'.
+                if (j.charAt(0).toLowerCase().includes('j')) {  // Using .charAt(0) and .includes() to locate all the first letters of each name. toLowerCase() to consider both casings.
+                    jNames.push(j);                             // The previously declared variable will append each name starting with the letter 'J'.
+                }
+            }
+            
+            finalOutput += `The following names begin with the letter "J": ${jNames}.`;                                  // Appending names starting with 'J' message to the final output. 
+
+            console.log(finalOutput);                           // Printing all the appended messsage as one console.log. 
+
+
+        </script>
+    </ol>
+</body>
+
+</html>
