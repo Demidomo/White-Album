@@ -1,0 +1,28 @@
+
+
+
+/* Element Specificity */
+div {
+
+    /* If we give any style !important, the specifity rules doesn't make sense */
+    background-color: green !important;
+    width: 100px;
+    height: 100px;
+}
+
+
+/* class specificity > Element Specificity */
+.red {
+    background-color: red;
+}
+
+
+/* ID specificity >  class specificity */
+#div1 {
+    /* This will be applied because we don't follow specificty now, so whatever comes after will be applied even if both were !important */
+    background-color: yellow !important; 
+
+    /* This will be applied because we don't follow specificty now, so whatever comes after will be applied  */
+    width: 400px !important;
+    height: 400px !important;
+}
