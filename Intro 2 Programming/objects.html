@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Objects</title>
+        <style>
+            body {
+                font-family: helvetica;
+            }
+            em { 
+                font-weight: bold; 
+                font-style: normal; 
+                text-decoration: underline; 
+                font-size: 1.2em; 
+            }
+            h1 {
+                text-align:center;
+            }
+            ol {
+                list-style: none;
+                counter-reset: item;
+                width: 700px; 
+                position: relative; 
+                left: 50%; 
+                margin-left: -350px;
+            }
+            ol > li {
+                counter-increment: item;
+                margin-bottom: 20px;
+            }
+            ol > li:before {
+                margin-right: 10px;
+                content: counter(item);
+                background: crimson;
+                border-radius: 100%;
+                color: white;
+                width: 1.3em;
+                text-align: center;
+                display: inline-block;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Objects</h1>
+        <script>
+        	// ==============
+        	// Object Basics
+        	// ==============
+        	
+        </script>
+
+        <ol>
+        	<li><em>Fix Object Errors</em>
+                <br/>
+                Below is an object literal created with mistakes. Fix the errors and console.log the object. Then separately console.log each property on its own without using a loop.
+            </li>
+            <script>
+            	let qNum = 1;
+            	console.log(`%c Question ${qNum}.`, "color: #bada55; background: black;");
+
+            	const favouriteObj = {
+            		colour: "brown",
+            		movie: "Gladiator",
+            		song: "Oops I did it again",
+            		food: "Hot dog",
+            		number: 7
+            }
+            	console.log(favouriteObj);
+            	console.log(favouriteObj.colour);
+                
+            </script>
+
+
+            <li><em>Create your own Object Literal</em>
+                <br/>
+                Create your own object called family that contains at least 3 properties. Have these properties represent some of your family members like father or sister etc., and give them names for their values. console.log the entire object. Then, for each family member, console.log "My father's name is X", "My brother's name is Y".
+            </li>
+            <script>
+            	qNum++;
+            	console.log(`%c Question ${qNum}.`, "color: #bada55; background: black;");
+                const familyMembers = {
+                    mother: "Lisa",
+                    father: "John",
+                    brother: "Tyler"
+                }
+
+                console.log(`My father is ${familyMembers.father}, my mother is ${familyMembers.mother}, my brother is ${familyMembers.brother}.`)
+
+            </script>
+
+
+             <li><em>Country Capitals Object</em>
+                <br/>
+                Create a single object called worldCapitals with 4 properties. The keys of these properties should be Canada, USA, Mexico, UK. Make the values of these properties be their respective capital cities. console.log the entire object.
+            </li>
+            <script>
+            	qNum++;
+            	console.log(`%c Question ${qNum}.`, "color: #bada55; background: black;");
+                const worldCapitals = {
+                    canada: "Ottawa",
+                    usa: "DC",
+                    mexico: "Mexico City",
+                    uk: "London"
+                }
+
+                console.log(`Here are the world capitals for Canada, USA, Mexico, and UK: ${worldCapitals.canada}, ${worldCapitals.usa}, ${worldCapitals.mexico}, ${worldCapitals.uk}.`);
+            </script>
+
+
+            <li><em>Country Capitals Object MODIFIED</em>
+                <br/>
+                Using the object you already created above, change the capital of Canada to Vancouver. Also add 2 new countries (France and Italy) and give their values their respective capital cities. console.log the entire object and see the changes.
+            </li>
+            <script>
+            	qNum++;
+            	console.log(`%c Question ${qNum}.`, "color: #bada55; background: black;");
+                
+                worldCapitals["canada"] = "Vancouver";
+                worldCapitals["france"] = "Paris";
+                worldCapitals["italy"] = "Roma";
+
+
+                console.log(worldCapitals);
+
+            </script>
+
+
+            <li><em>Objects Don't have to Contain the same type of Data</em>
+                <br/>
+                Create an object called myself and have it contain the following properties along with corresponding values.<br>
+                name, yearOfBirth, address, isEnrolledInVCC, hobbies (have at least 5 hobbies).
+                <br>Make sure to use a suitable data type for each property. 
+                <br>console.log the entire object and see if the object is correct.
+            </li>
+            <script>
+            	qNum++;
+            	console.log(`%c Question ${qNum}.`, "color: #bada55; background: black;");
+
+                const myself = {
+                    name: "matt",
+                    yearOfBirth: 1996,
+                    address: "vancouver",
+                    isEnrolledInVCC: true,
+                    hobbies: ["running", "walking", "jumping", "talking", "listening"]
+                }
+
+                console.log(myself.join);
+
+            </script>
+
+
+            <li><em>Objects Don't have to Contain the same type of Data EXTENDED</em>
+                <br/>
+                Using the <b>myself</b> object you created above, write code that checks to see if isEnrolledInVCC is true. If it is, console.log "I am a student".
+                <br><br>
+                Check to see if the object <strong>has a property</strong> called "hobbies". You may need to look up an inbuilt JavaScript method that does this for you. If it does, console.log "My hobbies are A, B, C, D, E."
+                <br><br>
+                Check to see if the object has a property called "occupation". If it does, console.log "My occupation is X.". If it doesn't then add occupation as a property to the object.
+                <br><br>
+                Finally console.log the entire object once again.
+            </li>
+            <script>
+            	qNum++;
+            	console.log(`%c Question ${qNum}.`, "color: #bada55; background: black;");
+
+                if (myself.isEnrolledInVCC) {
+                    console.log("I am a student");
+                }
+
+                if (myself.hasOwnProperty("hobbies")) {
+                    console.log(`My hobbies are ${(myself.hobbies).join(" ")}`);
+                }
+
+                if (myself.hasOwnProperty("occupation")) {
+                    console.log(`My occupation is ${occupation}`);
+                }
+                else {
+                    myself["occupation"] = "astronaut";
+                    console.log(myself);
+                }
+
+                
+
+            </script>
+
+
+            <li><em>Objects Don't have to Contain the same type of Data EXTENDED LOOP through Object</em>
+                <br/>
+                Using the myself object you created above, in a single console.log print out each property key beside their corresponding value like so:<br>
+                "name = James Finn<br>
+                 yearOfBirth = 2001<br>
+                 address = Vancouver"<br><br>
+                Use a <code>for in</code> loop to do this.
+            </li>
+            <script>
+            	qNum++;
+            	console.log(`%c Question ${qNum}.`, "color: #bada55; background: black;");
+                for (let things in myself) {
+                    console.log(things + " = " + myself[things]);
+                }
+
+
+            </script>
+
+
+            <li><em>Count Elements in Array, Keep Track with Object</em>
+                <br/>
+                The array below contains either "A", "B" and "C" in different amounts. Use the lettersObj object to get the total amount of each letter and in a single console.log print<br><br>
+                "A = x<br>
+                B = x<br>
+                C = x"<br><br>
+                where x is the number of times the letter appears in the array.
+            </li>
+            <script>
+            	qNum++;
+            	console.log(`%c Question ${qNum}.`, "color: #bada55; background: black;");
+
+            	const lettersArr = ["A","B","B","C","A","A","C","B","B","C","A","A"];
+            	const lettersObj = {
+            		"A": 0,
+            		"B": 0,
+            		"C": 0
+            	};
+
+                for (let letter of lettersArr) {
+                    if (letter === "A") {
+                        lettersObj["A"] += 1;
+
+                    }
+
+                    else if (letter === "B") {
+                        lettersObj["B"] += 1;
+
+                    }
+
+                    else if (letter === "C") {
+                        lettersObj["C"] += 1;
+                    }
+                }
+                
+                    
+                for (let prop in lettersObj) {
+                    console.log(`${prop} = ${lettersObj[prop]}`);
+                }
+
+
+            </script>
+        </ol>
+    </body>
+</html>
