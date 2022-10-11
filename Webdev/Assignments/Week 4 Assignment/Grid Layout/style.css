@@ -1,0 +1,77 @@
+
+section .Logo {
+    height: 80px;
+    width: 245px;
+   
+}
+
+
+section .item-container {
+    height: 50px; 
+    width: 50px;
+   
+
+}
+
+
+.grid-container {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(12, 8.3%);
+    grid-auto-rows: 140px;
+    /* justify-content: center;
+    align-items: center; */
+}
+
+
+
+
+
+/* Each individual Grid Item */
+.grid-item {
+    background-color: rgb(61, 54, 54);
+    border: 1px solid rgb(17, 119, 202);
+    color: white;
+    padding: 80px;
+    text-align: center;
+    justify-items: center;
+}
+
+
+/* Targeting first grid item to take the whole width of the row, so we start from 1 to either 4 or -1 */
+.grid-item1 {
+   grid-column-start: 1;
+   grid-column-end: -1;
+   grid-row: span 2;
+
+}
+
+
+/* Short hand way to write grid-column-start and grid-column-end */
+/* .grid-item6 {
+    grid-column: 1 / -1;
+} */
+
+
+/* We can span columns */
+.grid-item2 {
+    grid-column: span 4;
+    padding: 10px;
+}
+.grid-item3 {
+    grid-column: span 4;
+    padding: 10px;
+}
+.grid-item4 {
+    grid-column: span 4;
+    padding: 10px;
+}
+
+
+/* Similar to rows we can also span columns */
+.grid-item5 {
+    grid-column: span 9;
+}
+.grid-item6 {
+    grid-column: span 3;
+}
