@@ -1,4 +1,4 @@
-    // Javascript assignment 1
+    // Muochu Hu Javascript assignment 1
 
     const testArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     const testArray2 = ["hello", "world", "how", "are", "you"];
