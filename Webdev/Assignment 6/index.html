@@ -1,0 +1,49 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Student Record -->
+    <form>
+        <label for="">First Name</label>
+        <input type="text" placeholder="First Name" id="firstName" onchange="changeFirstName(event)">
+        <br>
+
+        <label for="">Last Name</label>
+        <input type="text" placeholder="Last Name" id="lastName" onchange="changeLastName(event)">
+        <br>
+
+        <!-- Email -->
+
+        <label for="">Email</label>
+        <input type="text" placeholder="Email" id="email" onchange="changeEmail(event)">
+        <br>
+
+        <!-- Roll Number -->
+
+        <label for="">Roll Number</label>
+        <input type="text" placeholder="Roll Number" id="rollNumber" onchange="changeRollNumber(event)">
+        <br>
+        <!-- Contact -->
+
+        <label for="">Contact</label>
+        <input type="text" placeholder="Contact" id="contact" onchange="changeContact(event)">
+        <br>
+
+        
+        <button id="submitButton" onclick="submitForm(event)" type="submit">Submit</button>
+
+
+        <table id="studentRecordTable"></table>
+    </form>
+
+</body>
+
+</html>
