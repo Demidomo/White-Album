@@ -3,7 +3,7 @@
 using namespace std;
 
 void drawShapes() {
-    cout << "What shape you like to draw? (Choose 1 for Rectangle and 2 for Right angle triangle)" << std::endl;
+    cout << "What shape you like to draw? (Choose 1 for Rectangle and 2 for Right angle triangle)" << endl;
 
     int shape;
     cin >> shape;
@@ -18,7 +18,7 @@ void drawShapes() {
             for (int j = 0; j < width; j++) {
                 cout << "*";
             }
-            cout << std::endl;
+            cout << endl;
         }
     }
 
@@ -39,10 +39,11 @@ void drawShapes() {
     }
 
     // Asking user if they would draw another shape
-    cout << "---Do you want to try again? (y for yes, n for no)" << std::endl;
+    cout << "---Do you want to try again? (y for yes, n for no)" << endl;
     char tryAgain;
     cin >> tryAgain;
 
+    // When user enters 'y', the program restarts
     if (tryAgain == 'y') {
         drawShapes();
     }
