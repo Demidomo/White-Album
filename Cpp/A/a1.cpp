@@ -35,7 +35,7 @@ void drawShapes() {
             cout << endl;
         }
     } else {
-        cout << "Invalid input. Please choose 1 or 2." << std::endl;
+        cout << "Invalid input. Please choose 1 or 2." << endl;
     }
 
     // Asking user if they would draw another shape
