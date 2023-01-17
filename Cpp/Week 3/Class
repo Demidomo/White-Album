@@ -1,0 +1,21 @@
+#include <string>
+#include <iostream>
+
+
+// 1. Pre-compile stage
+// 2. compile object files
+// 3. Linking
+
+
+void myPrint(std::string val);
+
+int main() {
+	myPrint("Matt");
+
+	return 0;
+}
+
+void myPrint(std::string msg) {
+	std::cout << val << std: endl;
+}
+
