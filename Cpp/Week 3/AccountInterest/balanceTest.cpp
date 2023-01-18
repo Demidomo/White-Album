@@ -28,7 +28,7 @@ int main() {
 	
 	// Write a function named compondInterest(DollarAmount originalValue, int interestPerYear, int divisor, int numYears)
 	// This function accumulates interest for numYears and return the result as DollarAmount
-	// DollarAmount newAmount = compoundInterest(d3, 255, 100, 10)
+	// DollarAmount d3 = compoundInterest(d3, 255, 100, 10)
 	
 
 	return 0;
