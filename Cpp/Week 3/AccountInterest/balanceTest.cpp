@@ -23,7 +23,12 @@ int main() {
 	cout << "After balance 2%" << d3.toString() << endl;
 	d3.addInterest(234, 100*100);
 	cout << "After balance 2.34%" << d3.toString() << endl;
-
+	
+	
+	
+	// Write a function named compondInterest(DollarAmount originalValue, int interestPerYear, int divisor, int numYears)
+	// This function accumulates interest for numYears and return the result as DollarAmount
+	
 
 	return 0;
 }
