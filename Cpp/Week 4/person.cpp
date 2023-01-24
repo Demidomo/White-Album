@@ -45,5 +45,7 @@ int Person::getAge() const {
 }
 
 std::string Person::toString() const {
-	return std::string();
+	
+	std::string res = "Person: " + first + " " + last + ": age =" + std::to_string(age);
+		return;
 }
