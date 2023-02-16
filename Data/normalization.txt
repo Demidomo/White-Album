@@ -1,0 +1,110 @@
+To normalize the given dataset, we need to identify the primary key and dependencies among the attributes. We will assume that each book has a unique ISBN, so we will use that as our primary key.
+
+First normal form (1NF):
+
+There are no repeating groups or arrays in the data.
+Each field contains only atomic values.
+The dataset already meets the requirements of 1NF, so no changes are needed.
+
+Second normal form (2NF):
+
+The data is in 1NF.
+All non-key attributes are dependent on the entire primary key.
+The attributes author_name, author_hiredate, and author_genre are only dependent on the book_isbn key, and not the book_publisher. Therefore, we will create a new table Author with the columns author_name, author_hiredate, author_genre, and book_isbn. We will remove these columns from the original book table to get the following two tables:
+
+Book Table:
+
+book_title
+book_publisher
+book_isbn
+publisher_contact_name
+publisher_contact_num
+Author Table:
+
+author_name
+author_hiredate
+author_genre
+book_isbn
+Third normal form (3NF):
+
+The data is in 2NF.
+All non-key attributes are dependent on only the primary key or other non-key attributes.
+The attribute publisher_contact_name is dependent on book_publisher and not on the primary key book_isbn. Therefore, we will create a new table Publisher with the columns book_publisher, publisher_contact_name, and publisher_contact_num. We will remove the columns book_publisher, publisher_contact_name, and publisher_contact_num from the Book table and replace them with a foreign key to the Publisher table. This gives us the following three tables:
+
+Book Table:
+
+book_title
+book_isbn
+publisher_id (foreign key to Publisher table)
+Author Table:
+
+author_name
+author_hiredate
+author_genre
+book_isbn
+Publisher Table:
+
+book_publisher
+publisher_contact_name
+publisher_contact_num
+We have now normalized the dataset to 3NF.
+
+
+
+
+To normalize the given dataset, we need to identify the primary key and dependencies among the attributes. We will assume that each appointment has a unique Appointment Date/Time, SurgeryNo, and StaffNo, so we will use those as our primary key.
+
+First normal form (1NF):
+
+There are no repeating groups or arrays in the data.
+Each field contains only atomic values.
+The dataset already meets the requirements of 1NF, so no changes are needed.
+
+Second normal form (2NF):
+
+The data is in 1NF.
+All non-key attributes are dependent on the entire primary key.
+The attributes DentistName and PatientName are only dependent on the StaffNo and PatinetNo keys, respectively, and not on the entire primary key. Therefore, we will create two new tables Dentist and Patient with the columns StaffNo and DentistName and PatientNo and PatientName respectively. We will remove these columns from the original Appointment table to get the following three tables:
+
+Appointment Table:
+
+StaffNo
+PatientNo
+Appointment Date/Time
+SurgeryNo
+Dentist Table:
+
+StaffNo
+DentistName
+Patient Table:
+
+PatientNo
+PatientName
+Third normal form (3NF):
+
+The data is in 2NF.
+All non-key attributes are dependent on only the primary key or other non-key attributes.
+The attribute DentistName is dependent on StaffNo and not on the primary key Appointment Date/Time, SurgeryNo, and PatientNo. Therefore, we will remove the column DentistName from the Appointment table and replace it with a foreign key to the Dentist table. The same applies to PatientName. This gives us the following four tables:
+
+Appointment Table:
+
+StaffNo (foreign key to Dentist table)
+PatientNo (foreign key to Patient table)
+Appointment Date/Time
+SurgeryNo
+Dentist Table:
+
+StaffNo
+DentistName
+Patient Table:
+
+PatientNo
+PatientName
+We have now normalized the dataset to 3NF.
+
+
+
+
+
+
+
