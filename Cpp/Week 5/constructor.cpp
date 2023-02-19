@@ -18,7 +18,7 @@ class Book {
         }
         
         
-        // constructor, created everytime an instance is created 
+        // Attribute constructor, created everytime an instance is created 
         Book(string aTitle, string aAuthor, int aPages) {
             title = aTitle;
             author = aAuthor;
