@@ -1,4 +1,3 @@
-
 #pragma once
 
 #include <string>
@@ -12,31 +11,27 @@ struct Course
 {
 	std::string name;
 	T grade;
-	Course(std::string n = "CourseNotSet", T g = T{}) : name(n), grade(g) {}//this is also a default constrructor
-
-	void setGrade(T g)
-	{
-		grade = g;
-	}
+	Course(std::string n = "CourseNameNotSet", T g = T{}) : name(n), grade(g) // this is also a default constructor
+	{}  
 };
 
 // represents a student and its grades in all courses she has taken so far.
-template<typename T, size_t NumGrades>
-class Student
+template<typename T, size_t NumCourses>
+class Student 
 {
-
-	std::string name;
-	int id;
-	size_t numCoursesSet{};
-	std::array<Course<T>, NumGrades> courses;
+	std::string name;  // student's name
+	int id;       // student's id
+	size_t numCoursesSet{}; // number of courses in the courses list that have been set so far.
+	std::array<Course<T>, NumCourses> courses;
+//	std::vector<Course<T>> courses;
 
 	//Student()   // defauilt constructor is private, so only accessible inside the class
 	//{}
-
 public:
-	Student(std::string n = "NotSet", int d = -1) : name(n), id(d), numCoursesSet(0)
+
+	Student(std::string n="NotSet", int d=-1) : name(n), id(d), numCoursesSet(0)
 	{
-		std::cout << "Student : (" << name << ", " << id << ") created\n";
+		std::cout << "Student : ("<<name<<", "<<id<<") created\n"; 
 	}
 
 	Course<T> getCourse(size_t idx) const
@@ -44,27 +39,21 @@ public:
 		return courses.at(idx);
 	}
 
-	void setCourseGrade(size_t idx, T g)
-	{
-		courses.at(idx).setGrade(g);
-	}
-
 	//THis method computes the average grade for all the courses for this student and return it.
 	T computeAverage()
 	{
-		T avg{ 0 };
+		T avg{};
 		// your code goes here.
-		for (int i = 0; i < NumGrades; ++i) {
-			avg += courses[i].grade;
-		}
-		avg /= NumGrades;
 		return avg;
 	}
 
 	void addCourse(std::string coursename, T g)
 	{
-		if (numCoursesSet < NumGrades)
-			courses[numCoursesSet++] = Course<T>(coursename, g);
+		if (numCoursesSet < NumCourses)
+		{
+			courses[numCoursesSet] = Course<T>(coursename, g);
+			++numCoursesSet;
+		}
 	}
 
 	std::string getName() const
@@ -74,19 +63,21 @@ public:
 
 	void setName(std::string n)
 	{
-		if (n.length() > 1)
+		if(n.length() > 1)
 			name = n;
+	}
+
+	void setID(int d)
+	{
+		if (d > 0)
+			id = d;
 	}
 
 	int getID() const
 	{
 		return id;
 	}
-
-	void setID(int n)
-	{
-		if (n > 0)
-			id = n;
-	}
-
 };
+	
+	
+	
