@@ -80,3 +80,77 @@ SELECT title, release_year, length FROM film WHERE length BETWEEN 50 and 60 AND 
 | SMILE EARRING      |         2006 |     60 |
 | TROJAN TOMORROW    |         2006 |     52 |
 +--------------------+--------------+--------+
+
+
+
+SELECT COUNT(*)
+    FROM film
+        WHERE length <= 30
+        AND rental_rate = 4.99;
+
+
++----------+
+| COUNT(*) |
++----------+
+|        0 |
++----------+
+1 row in set (0.001 sec)
+
+
+-- 
+-- SELECT title, release_year, length
+--     FROM film
+--         WHERE length BETWEEN 50 and 60
+--             AND rental_rate = 2.99
+--             ORDER BY title;
+
+
+-- The number of films where the lenght is at least less than or equal to 30 minutes 
+-- and the rental rate is 4.99
+
+SELECT COUNT(*)
+    FROM film
+        WHERE length >= 30
+        AND rental_rate = 4.99;
+
+
+
+-- the title, rental rate, for all movies that are rated "R" or "G"
+-- that include deleted scenes, order by the most expensive rental first 
+
+-- SELECT title, rental_rate, rating, special_features
+--     FROM film
+--         WHERE rating IN ('R', 'G')
+--             AND special_features IN ('Deleted Scenes')
+--             ORDER BY rental_rate DESC; 
+
+
+
+-- SELECT title, first_name, last_name
+--     FROM film, film_actor, actor
+--         WHERE film.film_id = film_actor.film_id
+--             AND film_actor.actor_id = actor.actor_id
+--             AND title = "Polish Brooklyn"
+--             ORDER by last_name, first_name;    -- alphabetical order
+
+
+
+-- SELECT * FROM film_actor WHERE film_id = 688;
+
+
+-- SELECT * FROM actor WHERE actor_id = 14;
+
+-- SELECT * FROM actor WHERE actor_id = 22;
+
+
+-- SELECT title, first_name, last_name
+--     FROM  film, film_actor, actor
+--      WHERE film.film_id = film_actor.film_id
+--         AND film_actor.actor_id = actor.actor_id
+--         AND  first_name = 'VIVIEN'
+--         AND last_name = 'BERGEN';
+       
+
+
+
+
