@@ -17,7 +17,7 @@ std::ostream& operator<<(std::ostream& output, const PhoneNumber& number)
         << "(" << number.areaCode << ") " << number.exchange << "-" << number.line << "\n";
     return output;
 }
-
+ 
 // our assumption is that the input format is fully respected. We are not prepared for any other format.
 std::istream& operator>>(std::istream& input, PhoneNumber& number)  //  we expect this format: (604) 311-1103
 {
