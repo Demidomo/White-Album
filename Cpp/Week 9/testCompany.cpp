@@ -58,7 +58,7 @@ int main()
         std::getline(ss, startingDay, '-');
         std::getline(ss, startingMonth, '-');
         std::getline(ss, startingYear, ',');
-        std::getline(ss, genderStr, ',');
+        std::getline(ss>>ws, genderStr, ',');
         std::getline(ss, job, ',');
         ss >> salary;
 
@@ -109,5 +109,6 @@ int main()
 
     std::cout << "End of assignment.\n";
 
+    system("pause");
     return 0;
 }
