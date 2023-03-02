@@ -26,43 +26,43 @@ public:
     Person() : m_name(""), birthDate(Date()), fn(PhoneNumber()), m_gender(eGender::Others) {}
 
     // Name setter 
-    void setName(std::string name) { 
-        m_name = name; 
+    void setName(std::string name) {
+        m_name = name;
     }
 
     // Name getter
-    std::string getName() const { 
-        return m_name; 
+    std::string getName() const {
+        return m_name;
     }
 
     // BirthDate setter 
-    void setBirthDate(Date birth) { 
-        birthDate = birth; 
+    void setBirthDate(Date birth) {
+        birthDate = birth;
     }
 
     // BirthDate getter
-    Date getBirthDate() const { 
-        return birthDate; 
+    Date getBirthDate() const {
+        return birthDate;
     }
 
     // PhoneNumber setter
-    void setPhoneNumber(std::string area, std::string exchange, std::string line) { 
-        fn.setPhoneNumber(area, exchange, line); 
+    void setPhoneNumber(std::string area, std::string exchange, std::string line) {
+        fn.setPhoneNumber(area, exchange, line);
     }
 
     // PhoneNumber getter
-    PhoneNumber getPhoneNumber() const { 
-        return fn; 
+    PhoneNumber getPhoneNumber() const {
+        return fn;
     }
 
     // Gender Setter
     void setGender(eGender g) {
-        m_gender = g; 
+        m_gender = g;
     }
 
     // Gender Getter
-    eGender getGender() const { 
-        return m_gender; 
+    eGender getGender() const {
+        return m_gender;
     }
 
     // Gender function to convert to string options from eGender
@@ -108,7 +108,6 @@ public:
     void toString() const {
         std::cout << "Name: " << m_name << std::endl;
         std::cout << "Birthdate: " << birthDate << std::endl;
-        std::cout << "Phone Number: NULL" << std::endl;
         std::cout << "Gender: " << genderToString(m_gender) << std::endl;
     }
 
