@@ -78,6 +78,7 @@ public:
         }
     }
 
+  
     // Function to covert from string to eGender 
     static eGender stringToGender(std::string str)
     {
@@ -89,15 +90,26 @@ public:
             return eGender::Others;
     }
 
-    int getAge() const  // return age as year
+   
+
+    int getAge() const  // return each person's age as year
     {
-        //Get the current date
+        // Getting the current date and time
         time_t now;
         time(&now);
         struct tm localtm;
+
+        // converting the now to a tm structure
         localtime_s(&localtm, &now);
+
+        // Finding difference between birth year and current year 
         uint yearDiff = localtm.tm_year + 1900 - birthDate.getYear();
+        
+        // Finding the difference between birth month and current month
         uint monthDiff = localtm.tm_mon - birthDate.getMonth() + 1;
+
+        // If the birth month is later than the current month, or if the birth month is the same as the current month 
+        // but the birth day is later than the current day, we need to subtract 1 from the year difference.
         if (monthDiff < 0 || (monthDiff == 0 && localtm.tm_mday < birthDate.getDay())) {
             yearDiff--;
         }
