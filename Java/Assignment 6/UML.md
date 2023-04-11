@@ -8,6 +8,7 @@
               | + customer: Customer  |
               | - orderItems: List<OrderItem> |
               | - payments: List<Payment>    |
+              | - details: List<Details>     |
               +-----------------------+
                         |1
                         |
@@ -70,3 +71,13 @@
                              | + expiryDate: Date   |
                              | + cvv: String        |
                              +----------------+
+                        |
+                        |
+              +-----------------------+
+              |        Details        |
+              +-----------------------+
+              | + detailsID: int      |
+              | + description: String |
+              | + quantity: int       |
+              | + price: double       |
+              +-----------------------+
