@@ -157,4 +157,74 @@ federal dominion of four provinces.""")
 
 # Call restore_q7() if you accidentally delete the file
 # restore_q7()
+
+write a program that does: 
+Read text file (GasPrices.txt) 
+- Average price per year 
+- Average price per month
+- Highest and lowest price per year
+- List of prices lowest to highest 
+- list of prices, highest to lowest 
+def read_gas_prices(filename):
+    gas_prices = []
+    with open(filename, 'r') as file:
+        for line in file:
+            year, month, price = line.strip().split(',')
+            gas_prices.append((int(year), int(month), float(price)))
+    return gas_prices
+
+def calculate_average(data):
+    total_price = 0
+    total_entries = 0
+    for _, _, price in data:
+        total_price += price
+        total_entries += 1
+    return total_price / total_entries
+
+def calculate_statistics(data):
+    years_data = {}
+    for year, month, price in data:
+        if year not in years_data:
+            years_data[year] = []
+        years_data[year].append(price)
+    
+    for year, prices in years_data.items():
+        avg_price = calculate_average(prices)
+        highest_price = max(prices)
+        lowest_price = min(prices)
+        print(f"Year: {year}")
+        print(f"  Average Price: {avg_price:.2f}")
+        print(f"  Highest Price: {highest_price:.2f}")
+        print(f"  Lowest Price: {lowest_price:.2f}")
+
+def main():
+    filename = 'GasPrices.txt'
+    gas_prices = read_gas_prices(filename)
+    
+    # Calculate and print average price per year and per month
+    avg_price_per_year = calculate_average(gas_prices)
+    print(f"Average Price Per Year: {avg_price_per_year:.2f}")
+
+    # Calculate and print average price per month
+    avg_price_per_month = calculate_average(gas_prices)
+    print(f"Average Price Per Month: {avg_price_per_month:.2f}")
+    
+    # Calculate and print highest and lowest price per year
+    calculate_statistics(gas_prices)
+
+    # List of prices lowest to highest
+    sorted_prices_low_to_high = sorted(gas_prices, key=lambda x: x[2])
+    print("List of Prices (Lowest to Highest):")
+    for year, month, price in sorted_prices_low_to_high:
+        print(f"{year}-{month}: {price:.2f}")
+
+    # List of prices highest to lowest
+    sorted_prices_high_to_low = sorted(gas_prices, key=lambda x: x[2], reverse=True)
+    print("List of Prices (Highest to Lowest):")
+    for year, month, price in sorted_prices_high_to_low:
+        print(f"{year}-{month}: {price:.2f}")
+
+if __name__ == "__main__":
+    main()
+
 #############
